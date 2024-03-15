@@ -4,7 +4,6 @@ from typing import Any, Optional, Union
 from enum import IntEnum
 
 from agentscope.models import OpenAIWrapper, ModelWrapperBase
-from agentscope.constants import ShrinkPolicy
 from agentscope.utils.tools import to_openai_dict, to_dialog_str
 
 
@@ -21,45 +20,16 @@ class PromptEngine:
     def __init__(
         self,
         model: ModelWrapperBase,
-        shrink_policy: ShrinkPolicy = ShrinkPolicy.TRUNCATE,
-        max_length: Optional[int] = None,
         prompt_type: Optional[PromptType] = None,
-        max_summary_length: int = 200,
-        summarize_model: Optional[ModelWrapperBase] = None,
     ) -> None:
         """
 
         Args:
             model (`ModelWrapperBase`):
                 The target model for prompt engineering.
-            shrink_policy (`ShrinkPolicy`, defaults to
-            `ShrinkPolicy.TRUNCATE`):
-                The shrink policy for prompt engineering, defaults to
-                `ShrinkPolicy.TRUNCATE`.
-            max_length (`Optional[int]`, defaults to `None`):
-                The max length of context, if it is None, it will be set to the
-                max length of the model.
             prompt_type (`Optional[MsgType]`, defaults to `None`):
                 The type of prompt, if it is None, it will be set according to
                 the model.
-            max_summary_length (`int`, defaults to `200`):
-                The max length of summary, if it is None, it will be set to the
-                max length of the model.
-            summarize_model (`Optional[ModelWrapperBase]`, defaults to `None`):
-                The model used for summarization, if it is None, it will be
-                set to `model`.
-
-        Note:
-            1. TODO: Shrink function is still under development.
-            2. If the argument `max_length` and `prompt_type` are not given,
-            they will be set according to the given model.
-            3. `shrink_policy` is used when the prompt is too long, it can
-            be set to `ShrinkPolicy.TRUNCATE` or `ShrinkPolicy.SUMMARIZE`.
-                a. `ShrinkPolicy.TRUNCATE` will truncate the prompt to the
-                desired length.
-                b. `ShrinkPolicy.SUMMARIZE` will summarize partial of the
-                dialog history to save space. The summarization model
-                defaults to `model` if not given.
 
         Example:
             With prompt engine, we encapsulate different operations for
@@ -80,8 +50,6 @@ class PromptEngine:
             ```
         """
         self.model = model
-        self.shrink_policy = shrink_policy
-        self.max_length = max_length or model.max_length
 
         if prompt_type is None:
             if isinstance(model, OpenAIWrapper):
@@ -90,11 +58,6 @@ class PromptEngine:
                 self.prompt_type = PromptType.STRING
         else:
             self.prompt_type = prompt_type
-
-        self.max_summary_length = max_summary_length
-
-        if summarize_model is None:
-            self.summarize_model = model
 
     def join(
         self,
