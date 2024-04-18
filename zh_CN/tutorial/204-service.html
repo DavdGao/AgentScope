@@ -18,7 +18,7 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=7d86a446"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
@@ -78,15 +78,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AgentScope API 文档</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.agents.html">Agents package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.memory.html">Memory package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.models.html">Models package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.pipelines.html">Pipelines package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.service.html">Service package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.rpc.html">RPC package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.utils.html">Utils package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.web.html">Web UI package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../agentscope.html">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.agents.html">agentscope.agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.memory.html">agentscope.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.models.html">agentscope.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.pipelines.html">agentscope.pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.service.html">agentscope.service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.rpc.html">agentscope.rpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.utils.html">agentscope.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.web.html">agentscope.web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agentscope.html">agentscope</a></li>
 </ul>
 
         </div>
@@ -157,59 +157,71 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">summarization</span></code></p></td>
 <td><p>使用大型语言模型总结一段文字以突出其主要要点。</p></td>
 </tr>
-<tr class="row-odd"><td><p>网络搜索</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">web_search</span></code></p></td>
-<td><p>使用指定的搜索引擎（当前支持 Google 和 Bing）执行网络搜索。</p></td>
+<tr class="row-odd"><td><p>网络</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bing_search</span></code></p></td>
+<td><p>使用bing搜索。</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">google_search</span></code></p></td>
+<td><p>使用google搜索。</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">arxiv_search</span></code></p></td>
+<td><p>使用arxiv搜索。</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">download_from_url</span></code></p></td>
+<td><p>从指定的 URL 下载文件。</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">load_web</span></code></p></td>
 <td><p>爬取并解析指定的网页链接 （目前仅支持爬取 HTML 页面）</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">digest_webpage</span></code></p></td>
 <td><p>对已经爬取好的网页生成摘要信息（目前仅支持 HTML 页面）</p></td>
 </tr>
-<tr class="row-even"><td><p>文件处理</p></td>
+<tr class="row-odd"><td><p>文件处理</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">create_file</span></code></p></td>
 <td><p>在指定路径创建一个新文件，并可选择添加初始内容。</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">delete_file</span></code></p></td>
 <td><p>删除由文件路径指定的文件。</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">move_file</span></code></p></td>
 <td><p>将文件从一个路径移动或重命名到另一个路径。</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">create_directory</span></code></p></td>
 <td><p>在指定路径创建一个新的目录。</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">delete_directory</span></code></p></td>
 <td><p>删除一个目录及其所有内容。</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">move_directory</span></code></p></td>
 <td><p>将目录从一个路径移动或重命名到另一个路径。</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">read_text_file</span></code></p></td>
 <td><p>读取并返回文本文件的内容。</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">write_text_file</span></code></p></td>
 <td><p>向指定路径的文件写入文本内容。</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
+<tr class="row-odd"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">read_json_file</span></code></p></td>
 <td><p>读取并解析 JSON 文件的内容。</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
+<tr class="row-even"><td><p></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">write_json_file</span></code></p></td>
 <td><p>将 Python 对象序列化为 JSON 并写入到文件。</p></td>
 </tr>
-<tr class="row-even"><td><p><em>更多服务即将推出</em></p></td>
+<tr class="row-odd"><td><p><em>更多服务即将推出</em></p></td>
 <td><p></p></td>
 <td><p>正在开发更多服务功能，并将添加到 AgentScope 以进一步增强其能力。</p></td>
 </tr>
