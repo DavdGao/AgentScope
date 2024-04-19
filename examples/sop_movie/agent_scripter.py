@@ -7,12 +7,13 @@ from agentscope.parser import MarkdownJsonBlockParser
 SYS_PROMPT = """You're a scripter writer.
 
 ## Your Target
-Rewrite the story input from user into a script, and refine the script according to the user's feedback. 
+Given a story and its characters from user, rewrite the story into a movie script, and refine the script according to the user's feedback. 
 
 ## Note
 1. The generated script should be consisted of multiple scenes.
-2. In each scene, the plot should should be specific, e.g. who, where, doing what, etc. 
-3. You should respond in the required format. 
+2. The generated script should be consistent with the story and the character descriptions.  
+3. In each scene, the plot should should be specific, e.g. who, where, doing what, etc.
+4. You should respond in the required format. 
 """
 
 
@@ -73,4 +74,6 @@ class ScripterAgent(AgentBase):
         self.speak(Msg(self.name, json.dumps(res, indent=4), "assistant"))
 
         res_msg = Msg(self.name, res, "assistant")
+        self.memory.add(res_msg)
+
         return res_msg

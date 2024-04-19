@@ -2,6 +2,8 @@ import agentscope
 from agentscope.agents import UserAgent
 from agentscope.message import Msg
 from agentscope.models import load_model_by_config_name
+from agentscope.service import download_from_url
+from examples.sop_movie.agent_character import CharacterAgent
 from examples.sop_movie.agent_scripter import ScripterAgent
 from examples.sop_movie.agent_shoter import StoryboardAgent
 
@@ -33,56 +35,56 @@ agentscope.init(model_configs=[
     }
 ])
 
-# Step 1: Split the story into scenes and generate scripts for each scene
-user = UserAgent(name="User")
-scripter = ScripterAgent(model_config_name="gpt-4")
-
-# generate scripts
-x = None
-while True:
-    x = user(x)
-    if x.content == "exit":
-        break
-    x = scripter(x)
-    # record the current script
-    generated_script = x
-
-
-# Step 2: Generate several storyboard shots for each scene
-storyboard_agent = StoryboardAgent(model_config_name="gpt-4")
-# init dall-e model
+# model
 dall_e_model = load_model_by_config_name("dall-e")
 
-# generate shots
-for index, scene in enumerate(generated_script):
-    print(f" Scene {index} ".center(80, "#"))
+# agent
+user = UserAgent(name="User")
+character_agent = CharacterAgent(model_config_name="gpt-4")
+scriptwriter_agent = ScripterAgent(model_config_name="gpt-4")
+storyboard_agent = StoryboardAgent(model_config_name="gpt-4")
 
-    msg = Msg("system", scene, "system")
+
+# Step 1: Extract characters from the story
+x = Msg("user", TEST_STORY, "user")
+while True:
+    x = character_agent(x)
+    x = user(x)
+    if x.content == "exit":
+        # record the generated characters
+        generated_characters = x.content
+        break
+
+# Step 2: Split the story into scenes and generate scripts for each scene
+x = Msg("user", {"story": TEST_STORY, "characters": generated_characters}, "user", echo=True)
+while True:
+    x = scriptwriter_agent(x)
+    x = user(x)
+    if x.content == "exit":
+        # record the current script
+        generated_script = x.content
+        break
+
+
+# Step 3: Generate several storyboard shots for each scene
+for i_scene, scene in enumerate(generated_script):
+    print(f" Scene {i_scene} ".center(80, "#"))
+
+    msg = Msg("system", {"scene": scene, "character descriptions": generated_characters}, "system")
     while True:
         msg = storyboard_agent(msg)
         # record current shot description
-        generated_shots = msg
+        generated_shots = msg.content
         # obtain user feedback
         msg = user(msg)
         if msg.content == "exit":
             # Clear the memory for the last scene
             storyboard_agent.memory.clear()
 
-            # generate an image for the scene
-            img = dall_e_model()
-            # download image from url
-            download_image_from_url
-
+            for i_shot, shot in enumerate(generated_shots):
+                # generate an image for the scene
+                img_url = dall_e_model().image_urls
+                # download image from url
+                download_from_url(img_url, f"scene-{i_scene}_shot-{i_shot}.png")
 
             break
-
-
-#
-# shot = DialogAgent(
-#     name="User",
-#     sys_prompt="",
-#     model_config_name="gpt-4",
-# )
-
-
-
