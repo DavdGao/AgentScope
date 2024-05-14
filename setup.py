@@ -69,6 +69,8 @@ minimal_requires = [
     "openai>=1.3.0",
     "ollama>=0.1.7",
     "google-generativeai>=0.4.0",
+    "zhipuai",
+    "litellm",
 ]
 
 distribute_requires = minimal_requires + rpc_requires
