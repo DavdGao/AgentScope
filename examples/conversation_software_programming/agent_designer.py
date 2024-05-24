@@ -118,7 +118,12 @@ while True:
             break
 
 # Combine the design document and module document
-for module_name in design_document["modules"].keys():
+module_descriptions = design_document["modules"]
+design_document["modules"] = {}
+for module_name in module_document.keys():
+    design_document["modules"][module_name] = {
+        "describe": module_descriptions[module_name],
+    }
     design_document["modules"][module_name].update(module_document[module_name])
 
 print(json.dumps(design_document, indent=4))
