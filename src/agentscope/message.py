@@ -57,10 +57,7 @@ class MessageBase(dict):
         self.content = content
         self.role = role
 
-        if url:
-            self.url = url
-        else:
-            self.url = None
+        self.url = url
 
         self.update(kwargs)
 
@@ -91,6 +88,28 @@ class MessageBase(dict):
 class Msg(MessageBase):
     """The Message class."""
 
+    id: str
+    """The id of the message."""
+
+    name: str
+    """The name of who send the message."""
+
+    content: Any
+    """The content of the message."""
+
+    role: Literal["system", "user", "assistant"]
+    """The role of the message sender."""
+
+    metadata: Optional[dict]
+    """Save the information for application's control flow, or other
+    purposes."""
+
+    url: Optional[Union[Sequence[str], str]]
+    """A url to file, image, video, audio or website."""
+
+    timestamp: str
+    """The timestamp of the message."""
+
     def __init__(
         self,
         name: str,
@@ -99,6 +118,7 @@ class Msg(MessageBase):
         url: Optional[Union[Sequence[str], str]] = None,
         timestamp: Optional[str] = None,
         echo: bool = False,
+        metadata: Optional[Union[dict, str]] = None,
         **kwargs: Any,
     ) -> None:
         """Initialize the message object
@@ -117,6 +137,11 @@ class Msg(MessageBase):
             timestamp (`Optional[str]`, defaults to `None`):
                 The timestamp of the message, if None, it will be set to
                 current time.
+            echo (`bool`, defaults to `False`):
+                Whether to print the message to the console.
+            metadata (`Optional[Union[dict, str]]`, defaults to `None`):
+                Save the information for application's control flow, or other
+                purposes.
             **kwargs (`Any`):
                 Other attributes of the message.
         """
@@ -134,6 +159,7 @@ class Msg(MessageBase):
             role=role or "assistant",
             url=url,
             timestamp=timestamp,
+            metadata=metadata,
             **kwargs,
         )
         if echo:
@@ -192,12 +218,18 @@ class Tht(MessageBase):
         self,
         content: Any,
         timestamp: Optional[str] = None,
+        **kwargs: Any,
     ) -> None:
+        if "name" in kwargs:
+            kwargs.pop("name")
+        if "role" in kwargs:
+            kwargs.pop("role")
         super().__init__(
             name="thought",
             content=content,
             role="assistant",
             timestamp=timestamp,
+            **kwargs,
         )
 
     def to_str(self) -> str:
@@ -208,7 +240,7 @@ class Tht(MessageBase):
         return json.dumps({"__type": "Tht", **self})
 
 
-class PlaceholderMessage(MessageBase):
+class PlaceholderMessage(Msg):
     """A placeholder for the return message of RpcAgent."""
 
     PLACEHOLDER_ATTRS = {
@@ -286,7 +318,11 @@ class PlaceholderMessage(MessageBase):
             self._port: int = port
             self._task_id: int = task_id
         else:
-            self._stub = call_in_thread(client, x, "_reply")
+            self._stub = call_in_thread(
+                client,
+                x.serialize() if x is not None else "",
+                "_reply",
+            )
             self._host = client.host
             self._port = client.port
             self._task_id = None
@@ -344,7 +380,15 @@ class PlaceholderMessage(MessageBase):
 
     def __update_task_id(self) -> None:
         if self._stub is not None:
-            resp = deserialize(self._stub.get_response())
+            try:
+                resp = deserialize(self._stub.get_response())
+            except Exception as e:
+                logger.error(
+                    f"Failed to get task_id: {self._stub.get_response()}",
+                )
+                raise ValueError(
+                    f"Failed to get task_id: {self._stub.get_response()}",
+                ) from e
             self._task_id = resp["task_id"]  # type: ignore[call-overload]
             self._stub = None
 
@@ -379,7 +423,7 @@ _MSGS = {
 }
 
 
-def deserialize(s: str) -> Union[MessageBase, Sequence]:
+def deserialize(s: Union[str, bytes]) -> Union[MessageBase, Sequence]:
     """Deserialize json string into MessageBase"""
     js_msg = json.loads(s)
     msg_type = js_msg.pop("__type")
@@ -387,7 +431,7 @@ def deserialize(s: str) -> Union[MessageBase, Sequence]:
         return [deserialize(s) for s in js_msg["__value"]]
     elif msg_type not in _MSGS:
         raise NotImplementedError(
-            "Deserialization of {msg_type} is not supported.",
+            f"Deserialization of {msg_type} is not supported.",
         )
     return _MSGS[msg_type](**js_msg)
 

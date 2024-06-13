@@ -21,6 +21,16 @@ from .sql_query.sqlite import query_sqlite
 from .sql_query.mongodb import query_mongodb
 from .web.search import bing_search, google_search
 from .web.arxiv import arxiv_search
+from .web.dblp import (
+    dblp_search_publications,
+    dblp_search_authors,
+    dblp_search_venues,
+)
+from .multi_modality.dashscope_services import (
+    dashscope_image_to_text,
+    dashscope_text_to_image,
+    dashscope_text_to_audio,
+)
 from .service_response import ServiceResponse
 from .service_toolkit import ServiceToolkit
 from .service_toolkit import ServiceFactory
@@ -70,6 +80,12 @@ __all__ = [
     "load_web",
     "parse_html_to_text",
     "download_from_url",
+    "dblp_search_publications",
+    "dblp_search_authors",
+    "dblp_search_venues",
+    "dashscope_image_to_text",
+    "dashscope_text_to_image",
+    "dashscope_text_to_audio",
     # to be deprecated
     "ServiceFactory",
 ]

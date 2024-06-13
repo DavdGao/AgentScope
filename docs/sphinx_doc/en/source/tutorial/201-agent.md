@@ -1,6 +1,6 @@
 (201-agent-en)=
 
-# Customizing Your Own Agent
+# Agent
 
 This tutorial helps you to understand the `Agent` in more depth and navigate through the process of crafting your own custom agent with AgentScope. We start by introducing the fundamental abstraction called `AgentBase`, which serves as the base class to maintain the general behaviors of all agents. Then, we will go through the *AgentPool*, an ensemble of pre-built, specialized agents, each designed with a specific purpose in mind. Finally, we will demonstrate how to customize your own agent, ensuring it fits the needs of your project.
 
@@ -15,6 +15,8 @@ Each AgentBase derivative is composed of several key characteristics:
 * `model`: The model is the computational engine of the agent, responsible for making a response given existing memory and input. For more details about `model`, we defer to [Using Different Model Sources with Model API](#203-model).
 
 * `sys_prompt` & `engine`: The system prompt acts as predefined instructions that guide the agent in its interactions; and the `engine` is used to dynamically generate a suitable prompt. For more details about them, we defer to [Prompt Engine](206-prompt).
+
+* `to_dist`: Used to create a distributed version of the agent, to support efficient collaboration among multiple agents. Note that `to_dist` is a reserved field and will be automatically added to the initialization function of any subclass of `AgentBase`. For more details about `to_dist`, please refer to [Distribution](208-distribute).
 
 In addition to these attributes, `AgentBase` endows agents with pivotal methods such as `observe` and `reply`:
 

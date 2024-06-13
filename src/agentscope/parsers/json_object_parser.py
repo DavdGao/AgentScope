@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 """The parser for JSON object in the model response."""
+import inspect
 import json
 from copy import deepcopy
-from typing import Optional, Any, List
+from typing import Optional, Any, List, Sequence, Union
 
 from loguru import logger
+from pydantic import BaseModel
 
 from agentscope.exception import (
     TagNotFoundError,
@@ -14,6 +16,7 @@ from agentscope.exception import (
 )
 from agentscope.models import ModelResponse
 from agentscope.parsers import ParserBase
+from agentscope.parsers.parser_base import DictFilterMixin
 from agentscope.utils.tools import _join_str_with_comma_and
 
 
@@ -121,7 +124,7 @@ class MarkdownJsonObjectParser(ParserBase):
         )
 
 
-class MarkdownJsonDictParser(MarkdownJsonObjectParser):
+class MarkdownJsonDictParser(MarkdownJsonObjectParser, DictFilterMixin):
     """A class used to parse a JSON dictionary object in a markdown fenced
     code"""
 
@@ -138,10 +141,21 @@ class MarkdownJsonDictParser(MarkdownJsonObjectParser):
     """Closing end for a code block."""
 
     _format_instruction = (
-        "You should respond a json object in a json fenced code block as "
+        "Respond a JSON dictionary in a markdown's fenced code block as "
         "follows:\n```json\n{content_hint}\n```"
     )
     """The instruction for the format of the json object."""
+
+    _format_instruction_with_schema = (
+        "Respond a JSON dictionary in a markdown's fenced code block as "
+        "follows:\n"
+        "```json\n"
+        "{content_hint}\n"
+        "```\n"
+        "The generated JSON dictionary MUST follow this schema: \n"
+        "{schema}"
+    )
+    """The schema instruction for the format of the json object."""
 
     required_keys: List[str]
     """A list of required keys in the JSON dictionary object. If the response
@@ -152,6 +166,9 @@ class MarkdownJsonDictParser(MarkdownJsonObjectParser):
         self,
         content_hint: Optional[Any] = None,
         required_keys: List[str] = None,
+        keys_to_memory: Optional[Union[str, bool, Sequence[str]]] = True,
+        keys_to_content: Optional[Union[str, bool, Sequence[str]]] = True,
+        keys_to_metadata: Optional[Union[str, bool, Sequence[str]]] = False,
     ) -> None:
         """Initialize the parser with the content hint.
 
@@ -160,15 +177,80 @@ class MarkdownJsonDictParser(MarkdownJsonObjectParser):
                 The hint used to remind LLM what should be fill between the
                 tags. If it is a string, it will be used as the content hint
                 directly. If it is a dict, it will be converted to a json
-                string and used as the content hint.
+                string and used as the content hint. If it's a Pydantic model,
+                the schema will be displayed in the instruction.
             required_keys (`List[str]`, defaults to `[]`):
                 A list of required keys in the JSON dictionary object. If the
                 response misses any of the required keys, it will raise a
                 RequiredFieldNotFoundError.
+            keys_to_memory (`Optional[Union[str, bool, Sequence[str]]]`,
+            defaults to `True`):
+                The key or keys to be filtered in `to_memory` method. If
+                it's
+                - `False`, `None` will be returned in the `to_memory` method
+                - `str`, the corresponding value will be returned
+                - `List[str]`, a filtered dictionary will be returned
+                - `True`, the whole dictionary will be returned
+            keys_to_content (`Optional[Union[str, bool, Sequence[str]]]`,
+            defaults to `True`):
+                The key or keys to be filtered in `to_content` method. If
+                it's
+                - `False`, `None` will be returned in the `to_content` method
+                - `str`, the corresponding value will be returned
+                - `List[str]`, a filtered dictionary will be returned
+                - `True`, the whole dictionary will be returned
+            keys_to_metadata (`Optional[Union[str, bool, Sequence[str]]`,
+            defaults to `False`):
+                The key or keys to be filtered in `to_metadata` method. If
+                it's
+                - `False`, `None` will be returned in the `to_metadata` method
+                - `str`, the corresponding value will be returned
+                - `List[str]`, a filtered dictionary will be returned
+                - `True`, the whole dictionary will be returned
+
         """
-        super().__init__(content_hint)
+        self.pydantic_class = None
+
+        # Initialize the content_hint according to the type of content_hint
+        if inspect.isclass(content_hint) and issubclass(
+            content_hint,
+            BaseModel,
+        ):
+            self.pydantic_class = content_hint
+            self.content_hint = "{a_JSON_dictionary}"
+        elif content_hint is not None:
+            if isinstance(content_hint, str):
+                self.content_hint = content_hint
+            else:
+                self.content_hint = json.dumps(
+                    content_hint,
+                    ensure_ascii=False,
+                )
+
+        # Initialize the mixin class to allow filtering the parsed response
+        DictFilterMixin.__init__(
+            self,
+            keys_to_memory=keys_to_memory,
+            keys_to_content=keys_to_content,
+            keys_to_metadata=keys_to_metadata,
+        )
 
         self.required_keys = required_keys or []
+
+    @property
+    def format_instruction(self) -> str:
+        """Get the format instruction for the json object, if the
+        format_example is provided, it will be used as the example.
+        """
+        if self.pydantic_class is None:
+            return self._format_instruction.format(
+                content_hint=self.content_hint,
+            )
+        else:
+            return self._format_instruction_with_schema.format(
+                content_hint=self.content_hint,
+                schema=self.pydantic_class.model_json_schema(),
+            )
 
     def parse(self, response: ModelResponse) -> ModelResponse:
         """Parse the text field of the response to a JSON dictionary object,
@@ -185,6 +267,16 @@ class MarkdownJsonDictParser(MarkdownJsonObjectParser):
                 f"but got {type(response.parsed)} instead.",
                 response.text,
             )
+
+        # Requirement checking by Pydantic
+        if self.pydantic_class is not None:
+            try:
+                response.parsed = dict(self.pydantic_class(**response.parsed))
+            except Exception as e:
+                raise JsonParsingError(
+                    message=str(e),
+                    raw_response=response.text,
+                ) from None
 
         # Check if the required keys exist
         keys_missing = []
