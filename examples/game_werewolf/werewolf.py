@@ -30,6 +30,7 @@ def main() -> None:
         model_configs="./configs/model_configs.json",
         agent_configs="./configs/agent_configs.json",
         project="Werewolf",
+        studio_url="http://127.0.0.1:5000"
     )
 
     roles = ["werewolf", "werewolf", "villager", "villager", "seer", "witch"]

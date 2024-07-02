@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 """Model wrapper based on litellm https://docs.litellm.ai/docs/"""
 from abc import ABC
-from typing import Union, Any, List, Sequence
+from typing import Union, Any, List, Sequence, Optional
 
 from loguru import logger
 
 from .model import ModelWrapperBase, ModelResponse
+from ..formatter._formatter_base import SingleUserMessageFormatter, \
+    FormatterBase
 from ..message import MessageBase
 from ..utils.tools import _convert_to_str
 
@@ -26,7 +28,7 @@ class LiteLLMWrapperBase(ModelWrapperBase, ABC):
         **kwargs: Any,
     ) -> None:
         """
-        To use the LiteLLM wrapper, environent variables must be set.
+        To use the LiteLLM wrapper, environment variables must be set.
         Different model_name could be using different environment variables.
         For example:
             - for model_name: "gpt-3.5-turbo", you need to set "OPENAI_API_KEY"
@@ -36,7 +38,8 @@ class LiteLLMWrapperBase(ModelWrapperBase, ABC):
             - for model_name: "claude-2", you need to set "ANTHROPIC_API_KEY"
             - for Azure OpenAI, you need to set "AZURE_API_KEY",
             "AZURE_API_BASE", "AZURE_API_VERSION"
-        You should refer to the docs in https://docs.litellm.ai/docs/ .
+        You should refer to the docs in https://docs.litellm.ai/docs/
+
         Args:
             config_name (`str`):
                 The name of the model config.
@@ -47,7 +50,7 @@ class LiteLLMWrapperBase(ModelWrapperBase, ABC):
                 e.g. `temperature`, `seed`.
                 For generate_args, please refer to
                 https://docs.litellm.ai/docs/completion/input
-                for more detailes.
+                for more details.
 
         """
 
@@ -98,6 +101,52 @@ class LiteLLMChatWrapper(LiteLLMWrapperBase):
     """
 
     model_type: str = "litellm_chat"
+
+    _default_formatter = SingleUserMessageFormatter
+    """The default formatter for the model wrapper."""
+
+    def __init__(
+        self,
+        config_name: str,
+        model_name: str = None,
+        generate_args: dict = None,
+        formatter: Optional[FormatterBase] = None,
+        **kwargs: Any,
+    ) -> None:
+        """Initialize the LiteLLM chat wrapper, this wrapper will call the
+        `litellm.completion` API to generate the response. The corresponding
+        environment variables should be set before using the wrapper.
+
+        Args:
+            config_name (`str`):
+                The name of the model config.
+            model_name (`str`, default `None`):
+                The name of the model to use in `litellm.completion` API.
+            generate_args (`dict`, default `None`):
+                The extra keyword arguments used in litellm api generation,
+                e.g. `temperature`, `seed`. More details refer to
+                https://docs.litellm.ai/docs/completion/input
+            formatter (`FormatterBase`, default `None`):
+                The formatter object to format the input messages to the
+                required format. If not given, the default formatter will be
+                used.
+
+        Example:
+            - For OpenAI models, you need to set "OPENAI_API_KEY",
+            - For "claude-2", you need to set "ANTHROPIC_API_KEY"
+            - for Azure OpenAI, you need to set "AZURE_API_KEY",
+            "AZURE_API_BASE", "AZURE_API_VERSION"
+            - More details refer to the docs in https://docs.litellm.ai/docs/
+
+        """
+        super().__init__(
+            config_name=config_name,
+            model_name=model_name,
+            generate_args=generate_args,
+            **kwargs,
+        )
+
+        self.formatter = formatter or self._default_formatter
 
     def _register_default_metrics(self) -> None:
         # Set monitor accordingly

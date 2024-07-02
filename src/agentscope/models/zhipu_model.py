@@ -348,3 +348,5 @@ class ZhipuAIEmbeddingWrapper(ZhipuAIWrapperBase):
             self._metric("total_tokens"),
             metric_unit="token",
         )
+
+

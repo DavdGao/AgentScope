@@ -13,6 +13,7 @@ from . import web
 from . import exception
 from . import parsers
 from . import rag
+from . import formatter
 
 # objects or function
 from .msghub import msghub

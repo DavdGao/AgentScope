@@ -67,7 +67,8 @@ from .response import ModelResponse
 from ..exception import ResponseParsingError
 
 from ..file_manager import file_manager
-from ..message import MessageBase
+from ..formatter._formatter_base import FormatterBase
+from ..message import MessageBase, Msg
 from ..utils import MonitorFactory
 from ..utils.monitor import get_full_name
 from ..utils.tools import _get_timestamp
@@ -180,9 +181,18 @@ class ModelWrapperBase(metaclass=_ModelWrapperMeta):
     model_name: str
     """The name of the model, which is used in model api calling."""
 
+    _default_formatter: FormatterBase
+    """The default formatter for the model wrapper, used to format the input
+    messages into the format that the model API required."""
+
+    formatter: Union[FormatterBase, None]
+    """The formatter for the model wrapper, used to format the input messages 
+    into the format that the model API required."""
+
     def __init__(
-        self,  # pylint: disable=W0613
+        self,
         config_name: str,
+        formatter: FormatterBase,
         **kwargs: Any,
     ) -> None:
         """Base class for model wrapper.
@@ -199,6 +209,8 @@ class ModelWrapperBase(metaclass=_ModelWrapperMeta):
 
         self.config_name = config_name
         logger.info(f"Initialize model by configuration [{config_name}]")
+
+        self.formatter = formatter or self._default_formatter
 
     @classmethod
     def get_wrapper(cls, model_type: str) -> Type[ModelWrapperBase]:
@@ -227,14 +239,19 @@ class ModelWrapperBase(metaclass=_ModelWrapperMeta):
 
     def format(
         self,
-        *args: Union[MessageBase, Sequence[MessageBase]],
+        *args: Union[Msg, Sequence[Msg]],
     ) -> Union[List[dict], str]:
         """Format the input string or dict into the format that the model
         API required."""
-        raise NotImplementedError(
-            f"Model Wrapper [{type(self).__name__}]"
-            f" is missing the required `format` method",
-        )
+
+        if self.formatter is None:
+            raise RuntimeError(
+                f"Model Wrapper [{type(self).__name__}] doesn't "
+                f"need to format the input. Please try to use the "
+                f"model wrapper directly.",
+            )
+        else:
+            return self.formatter.format(*args)
 
     def _save_model_invocation(
         self,
