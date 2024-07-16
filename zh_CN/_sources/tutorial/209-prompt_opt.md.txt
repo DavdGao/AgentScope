@@ -1,6 +1,6 @@
 (209-prompt-opt-zh)=
 
-# Prompt 优化
+# 系统提示优化
 
 AgentScope实现了对智能体System Prompt进行优化的模块。
 
@@ -392,7 +392,7 @@ class MyAgent(AgentBase):
             # 或是 model_or_model_config_name=self.model
         )
 
-    def reply(self, x: dict = None) -> dict:
+    def reply(self, x: Optional[Union[Msg, Sequence[Msg]]] = None) -> Msg:
         self.memory.add(x)
 
         prompt = self.model.format(

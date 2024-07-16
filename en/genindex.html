@@ -59,10 +59,12 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorial/201-agent.html">Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/205-memory.html">Memory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/203-parser.html">Response Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/209-prompt_opt.html">System Prompt Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/204-service.html">Tool</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/202-pipeline.html">Pipeline and MsgHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/208-distribute.html">Distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/209-gui.html">AgentScope Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/210-rag.html">A Quick Introduction to RAG in AgentScope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/105-logging.html">Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/207-monitor.html">Monitor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/104-usecase.html">Example: Werewolf Game</a></li>
@@ -70,20 +72,20 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AgentScope API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.html">agentscope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.message.html">agentscope.message</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.models.html">agentscope.models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.agents.html">agentscope.agents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.memory.html">agentscope.memory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.parsers.html">agentscope.parsers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.exception.html">agentscope.exception</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.pipelines.html">agentscope.pipelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.service.html">agentscope.service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.rpc.html">agentscope.rpc</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.server.html">agentscope.server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.web.html">agentscope.web</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.prompt.html">agentscope.prompt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agentscope.utils.html">agentscope.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.html">agentscope package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.message.html">agentscope.message module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.models.html">agentscope.models package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.agents.html">agentscope.agents package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.memory.html">agentscope.memory package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.parsers.html">agentscope.parsers package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.exception.html">agentscope.exception module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.pipelines.html">agentscope.pipelines package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.service.html">agentscope.service package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.rpc.html">agentscope.rpc package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.server.html">agentscope.server package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.web.html">agentscope.web package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.prompt.html">agentscope.prompt package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentscope.utils.html">agentscope.utils package</a></li>
 </ul>
 
         </div>
@@ -199,8 +201,6 @@
         <li><a href="agentscope.message.html#agentscope.message.Msg.__init__">(agentscope.message.Msg method)</a>
 </li>
         <li><a href="agentscope.message.html#agentscope.message.PlaceholderMessage.__init__">(agentscope.message.PlaceholderMessage method)</a>
-</li>
-        <li><a href="agentscope.message.html#agentscope.message.Tht.__init__">(agentscope.message.Tht method)</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeWrapperBase.__init__">(agentscope.models.dashscope_model.DashScopeWrapperBase method)</a>
 </li>
@@ -759,8 +759,6 @@
         <li><a href="agentscope.rag.llama_index_knowledge.html#module-agentscope.rag.llama_index_knowledge">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     agentscope.rpc
 
@@ -768,6 +766,8 @@
         <li><a href="agentscope.rpc.html#module-agentscope.rpc">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     agentscope.rpc.rpc_agent_client
 
@@ -878,6 +878,13 @@
 
       <ul>
         <li><a href="agentscope.service.multi_modality.dashscope_services.html#module-agentscope.service.multi_modality.dashscope_services">module</a>
+</li>
+      </ul></li>
+      <li>
+    agentscope.service.multi_modality.openai_services
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#module-agentscope.service.multi_modality.openai_services">module</a>
 </li>
       </ul></li>
       <li>
@@ -2124,7 +2131,7 @@
       </ul></li>
       <li><a href="agentscope.message.html#agentscope.message.PlaceholderMessage.LOCAL_ATTRS">LOCAL_ATTRS (agentscope.message.PlaceholderMessage attribute)</a>
 </li>
-      <li><a href="agentscope.logging.html#agentscope.logging.log_studio">log_studio() (in module agentscope.logging)</a>
+      <li><a href="agentscope.logging.html#agentscope.logging.log_gradio">log_gradio() (in module agentscope.logging)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -2432,6 +2439,8 @@
 </li>
         <li><a href="agentscope.service.multi_modality.dashscope_services.html#module-agentscope.service.multi_modality.dashscope_services">agentscope.service.multi_modality.dashscope_services</a>
 </li>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#module-agentscope.service.multi_modality.openai_services">agentscope.service.multi_modality.openai_services</a>
+</li>
         <li><a href="agentscope.service.retrieval.html#module-agentscope.service.retrieval">agentscope.service.retrieval</a>
 </li>
         <li><a href="agentscope.service.retrieval.retrieval_from_list.html#module-agentscope.service.retrieval.retrieval_from_list">agentscope.service.retrieval.retrieval_from_list</a>
@@ -2663,14 +2672,50 @@
       </ul></li>
       <li><a href="agentscope.models.ollama_model.html#agentscope.models.ollama_model.OllamaWrapperBase">OllamaWrapperBase (class in agentscope.models.ollama_model)</a>
 </li>
+      <li><a href="agentscope.service.html#agentscope.service.openai_audio_to_text">openai_audio_to_text() (in module agentscope.service)</a>
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#agentscope.service.multi_modality.openai_services.openai_audio_to_text">(in module agentscope.service.multi_modality.openai_services)</a>
+</li>
+      </ul></li>
+      <li><a href="agentscope.service.html#agentscope.service.openai_create_image_variation">openai_create_image_variation() (in module agentscope.service)</a>
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#agentscope.service.multi_modality.openai_services.openai_create_image_variation">(in module agentscope.service.multi_modality.openai_services)</a>
+</li>
+      </ul></li>
+      <li><a href="agentscope.service.html#agentscope.service.openai_edit_image">openai_edit_image() (in module agentscope.service)</a>
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#agentscope.service.multi_modality.openai_services.openai_edit_image">(in module agentscope.service.multi_modality.openai_services)</a>
+</li>
+      </ul></li>
+      <li><a href="agentscope.service.html#agentscope.service.openai_image_to_text">openai_image_to_text() (in module agentscope.service)</a>
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#agentscope.service.multi_modality.openai_services.openai_image_to_text">(in module agentscope.service.multi_modality.openai_services)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="agentscope.service.html#agentscope.service.openai_text_to_audio">openai_text_to_audio() (in module agentscope.service)</a>
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#agentscope.service.multi_modality.openai_services.openai_text_to_audio">(in module agentscope.service.multi_modality.openai_services)</a>
+</li>
+      </ul></li>
+      <li><a href="agentscope.service.html#agentscope.service.openai_text_to_image">openai_text_to_image() (in module agentscope.service)</a>
+
+      <ul>
+        <li><a href="agentscope.service.multi_modality.openai_services.html#agentscope.service.multi_modality.openai_services.openai_text_to_image">(in module agentscope.service.multi_modality.openai_services)</a>
+</li>
+      </ul></li>
       <li><a href="agentscope.models.html#agentscope.models.OpenAIChatWrapper">OpenAIChatWrapper (class in agentscope.models)</a>
 
       <ul>
         <li><a href="agentscope.models.openai_model.html#agentscope.models.openai_model.OpenAIChatWrapper">(class in agentscope.models.openai_model)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.models.html#agentscope.models.OpenAIDALLEWrapper">OpenAIDALLEWrapper (class in agentscope.models)</a>
 
       <ul>
@@ -3106,8 +3151,6 @@
 </li>
         <li><a href="agentscope.message.html#agentscope.message.PlaceholderMessage.serialize">(agentscope.message.PlaceholderMessage method)</a>
 </li>
-        <li><a href="agentscope.message.html#agentscope.message.Tht.serialize">(agentscope.message.Tht method)</a>
-</li>
         <li><a href="agentscope.message.html#agentscope.message.serialize">(in module agentscope.message)</a>
 </li>
       </ul></li>
@@ -3315,14 +3358,14 @@
         <li><a href="agentscope.memory.temporary_memory.html#agentscope.memory.temporary_memory.TemporaryMemory">(class in agentscope.memory.temporary_memory)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.models.html#agentscope.models.ModelResponse.text">text (agentscope.models.ModelResponse attribute)</a>
 
       <ul>
         <li><a href="agentscope.models.response.html#agentscope.models.response.ModelResponse.text">(agentscope.models.response.ModelResponse attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.agents.html#agentscope.agents.TextToImageAgent">TextToImageAgent (class in agentscope.agents)</a>
 
       <ul>
@@ -3330,8 +3373,6 @@
 </li>
       </ul></li>
       <li><a href="agentscope.web.workstation.workflow_node.html#agentscope.web.workstation.workflow_node.TextToImageAgentNode">TextToImageAgentNode (class in agentscope.web.workstation.workflow_node)</a>
-</li>
-      <li><a href="agentscope.message.html#agentscope.message.Tht">Tht (class in agentscope.message)</a>
 </li>
       <li><a href="agentscope.utils.common.html#agentscope.utils.common.timer">timer() (in module agentscope.utils.common)</a>
 </li>
@@ -3359,8 +3400,6 @@
         <li><a href="agentscope.message.html#agentscope.message.Msg.to_str">(agentscope.message.Msg method)</a>
 </li>
         <li><a href="agentscope.message.html#agentscope.message.PlaceholderMessage.to_str">(agentscope.message.PlaceholderMessage method)</a>
-</li>
-        <li><a href="agentscope.message.html#agentscope.message.Tht.to_str">(agentscope.message.Tht method)</a>
 </li>
       </ul></li>
       <li><a href="agentscope.service.service_toolkit.html#agentscope.service.service_toolkit.ServiceToolkit.tools_calling_format">tools_calling_format (agentscope.service.service_toolkit.ServiceToolkit property)</a>
