@@ -63,3 +63,21 @@ def is_serializable(obj: Any) -> bool:
         return True
     except Exception:
         return False
+
+
+class Serializable:
+    """A base class for serialization, which should be inherited by the
+    child class to make it serializable."""
+
+    def to_dict(self) -> dict:
+        """Serialize the object to a dictionary, which requires two necessary
+        keys: `__module__` and `__name__`, indicating the module and class
+        name of the object. The other keys are the attributes of the object."""
+        raise NotImplementedError
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Serializable":
+        """Deserialize the dictionary to the object. The dictionary should
+        contain the keys `__module__` and `__name__`, indicating the module
+        and class name of the object."""
+        raise NotImplementedError

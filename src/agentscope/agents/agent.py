@@ -4,7 +4,7 @@
 from __future__ import annotations
 from abc import ABCMeta
 from types import GeneratorType
-from typing import Optional, Generator, Tuple
+from typing import Optional, Generator, Tuple, Dict
 from typing import Sequence
 from typing import Union
 from typing import Any
@@ -17,7 +17,8 @@ from agentscope.agents.operator import Operator
 from agentscope.logging import log_stream_msg, log_msg
 from agentscope.manager import ModelManager
 from agentscope.message import Msg
-from agentscope.memory import TemporaryMemory
+from agentscope.memory import TemporaryMemory, MemoryBase
+from agentscope.serialize import Serializable
 
 
 class _AgentMeta(ABCMeta):
@@ -138,6 +139,8 @@ class AgentBase(Operator, metaclass=_AgentMeta):
 
     _version: int = 1
 
+    _serialized_attributes: Dict[str, Serializable]
+
     def __init__(
         self,
         name: str,
@@ -236,6 +239,23 @@ class AgentBase(Operator, metaclass=_AgentMeta):
         if agent_class_name not in cls._registry:
             raise ValueError(f"Agent class <{agent_class_name}> not found.")
         return cls._registry[agent_class_name]  # type: ignore[return-value]
+
+    def __setattr__(self, key: str, value: Any) -> None:
+        """Rewrite the __setattr__ method to record the attributes that needs
+        to be serialized within the agent.
+
+        For now, we support the serialization of the objects inherited from
+        the following classes:
+        - MemoryBase
+        - ModelWrapperBase
+        - AgentBase
+        - ParserBase
+        -
+        """
+
+        #
+        if isinstance(value, MemoryBase):
+            pass
 
     @classmethod
     def register_agent_class(cls, agent_class: Type[AgentBase]) -> None:
