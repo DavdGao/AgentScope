@@ -17,8 +17,14 @@
       <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
       <script src="../../_static/doctools.js?v=9a2dae69"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -115,6 +121,7 @@
   <h1>Source code for agentscope.constants</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot; Some constants used in the project&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
 
@@ -134,7 +141,16 @@
 <span class="n">_DEFAULT_SUBDIR_CODE</span> <span class="o">=</span> <span class="s2">&quot;code&quot;</span>
 <span class="n">_DEFAULT_SUBDIR_FILE</span> <span class="o">=</span> <span class="s2">&quot;file&quot;</span>
 <span class="n">_DEFAULT_SUBDIR_INVOKE</span> <span class="o">=</span> <span class="s2">&quot;invoke&quot;</span>
-<span class="n">_DEFAULT_CACHE_DIR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;.cache&quot;</span> <span class="o">/</span> <span class="s2">&quot;agentscope&quot;</span><span class="p">)</span>
+<span class="n">_DEFAULT_CACHE_DIR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
+    <span class="n">Path</span><span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="s2">&quot;AS_HOME_PATH&quot;</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">/</span> <span class="s2">&quot;.cache&quot;</span>
+    <span class="o">/</span> <span class="s2">&quot;agentscope&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="n">_DEFAULT_CFG_NAME</span> <span class="o">=</span> <span class="s2">&quot;.config&quot;</span>
 <span class="n">_DEFAULT_IMAGE_NAME</span> <span class="o">=</span> <span class="s2">&quot;image_</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">.png&quot;</span>
 <span class="n">_DEFAULT_SQLITE_DB_NAME</span> <span class="o">=</span> <span class="s2">&quot;agentscope.db&quot;</span>
