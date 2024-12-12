@@ -2,6 +2,8 @@ English | [**中文**](https://github.com/modelscope/agentscope/blob/main/README
 
 # AgentScope
 
+.. note:: abc
+
 <h1 align="left">
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01cdjhVE1wwt5Auv7bY_!!6000000006373-0-tps-1792-1024.jpg" width="600" alt="agentscope-logo">
 </h1>
