@@ -7,7 +7,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Index &mdash; AgentScope  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c9484b72" />
 
@@ -229,6 +229,10 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.message.html#agentscope.message.Msg.__init__">(agentscope.message.Msg method)</a>
 </li>
         <li><a href="agentscope.message.msg.html#agentscope.message.msg.Msg.__init__">(agentscope.message.msg.Msg method)</a>
+</li>
+        <li><a href="agentscope.models.anthropic_model.html#agentscope.models.anthropic_model.AnthropicChatWrapper.__init__">(agentscope.models.anthropic_model.AnthropicChatWrapper method)</a>
+</li>
+        <li><a href="agentscope.models.html#agentscope.models.AnthropicChatWrapper.__init__">(agentscope.models.AnthropicChatWrapper method)</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.__init__">(agentscope.models.dashscope_model.DashScopeChatWrapper method)</a>
 </li>
@@ -723,6 +727,13 @@ window.addEventListener("load", () => mermaid.run());
 
       <ul>
         <li><a href="agentscope.models.html#module-agentscope.models">module</a>
+</li>
+      </ul></li>
+      <li>
+    agentscope.models.anthropic_model
+
+      <ul>
+        <li><a href="agentscope.models.anthropic_model.html#module-agentscope.models.anthropic_model">module</a>
 </li>
       </ul></li>
       <li>
@@ -1372,6 +1383,12 @@ window.addEventListener("load", () => mermaid.run());
 </li>
       <li><a href="agentscope.exception.html#agentscope.exception.AgentServerUnsupportedMethodError">AgentServerUnsupportedMethodError</a>
 </li>
+      <li><a href="agentscope.models.html#agentscope.models.AnthropicChatWrapper">AnthropicChatWrapper (class in agentscope.models)</a>
+
+      <ul>
+        <li><a href="agentscope.models.anthropic_model.html#agentscope.models.anthropic_model.AnthropicChatWrapper">(class in agentscope.models.anthropic_model)</a>
+</li>
+      </ul></li>
       <li><a href="agentscope.environment.html#agentscope.environment.Event.args">args (agentscope.environment.Event property)</a>
 
       <ul>
@@ -1566,9 +1583,11 @@ window.addEventListener("load", () => mermaid.run());
       </ul></li>
       <li><a href="agentscope.web.workstation.workflow.html#agentscope.web.workstation.workflow.compile_workflow">compile_workflow() (in module agentscope.web.workstation.workflow)</a>
 </li>
-      <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.config_name">config_name (agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
+      <li><a href="agentscope.models.anthropic_model.html#agentscope.models.anthropic_model.AnthropicChatWrapper.config_name">config_name (agentscope.models.anthropic_model.AnthropicChatWrapper attribute)</a>
 
       <ul>
+        <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.config_name">(agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
+</li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeImageSynthesisWrapper.config_name">(agentscope.models.dashscope_model.DashScopeImageSynthesisWrapper attribute)</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeMultiModalWrapper.config_name">(agentscope.models.dashscope_model.DashScopeMultiModalWrapper attribute)</a>
@@ -1796,6 +1815,8 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.rpc.html#agentscope.rpc.RpcClient.delete_all_agent">(agentscope.rpc.RpcClient method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.rpc.rpc_agent_pb2_grpc.html#agentscope.rpc.rpc_agent_pb2_grpc.RpcAgent.delete_all_agents">delete_all_agents() (agentscope.rpc.rpc_agent_pb2_grpc.RpcAgent static method)</a>
 
       <ul>
@@ -1804,8 +1825,6 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.server.servicer.html#agentscope.server.servicer.AgentServerServicer.delete_all_agents">(agentscope.server.servicer.AgentServerServicer method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.service.html#agentscope.service.delete_directory">delete_directory() (in module agentscope.service)</a>
 
       <ul>
@@ -1816,18 +1835,6 @@ window.addEventListener("load", () => mermaid.run());
 
       <ul>
         <li><a href="agentscope.service.file.common.html#agentscope.service.file.common.delete_file">(in module agentscope.service.file.common)</a>
-</li>
-      </ul></li>
-      <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.deprecated_model_type">deprecated_model_type (agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
-
-      <ul>
-        <li><a href="agentscope.models.html#agentscope.models.DashScopeChatWrapper.deprecated_model_type">(agentscope.models.DashScopeChatWrapper attribute)</a>
-</li>
-        <li><a href="agentscope.models.openai_model.html#agentscope.models.openai_model.OpenAIChatWrapper.deprecated_model_type">(agentscope.models.openai_model.OpenAIChatWrapper attribute)</a>
-</li>
-        <li><a href="agentscope.models.html#agentscope.models.OpenAIChatWrapper.deprecated_model_type">(agentscope.models.OpenAIChatWrapper attribute)</a>
-</li>
-        <li><a href="agentscope.models.post_model.html#agentscope.models.post_model.PostAPIDALLEWrapper.deprecated_model_type">(agentscope.models.post_model.PostAPIDALLEWrapper attribute)</a>
 </li>
       </ul></li>
       <li><a href="agentscope.web.workstation.workflow_utils.html#agentscope.web.workstation.workflow_utils.deps_converter">deps_converter() (in module agentscope.web.workstation.workflow_utils)</a>
@@ -2022,9 +2029,13 @@ window.addEventListener("load", () => mermaid.run());
       </ul></li>
       <li><a href="agentscope.web.workstation.workflow_node.html#agentscope.web.workstation.workflow_node.ForLoopPipelineNode">ForLoopPipelineNode (class in agentscope.web.workstation.workflow_node)</a>
 </li>
-      <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.format">format() (agentscope.models.dashscope_model.DashScopeChatWrapper method)</a>
+      <li><a href="agentscope.models.anthropic_model.html#agentscope.models.anthropic_model.AnthropicChatWrapper.format">format() (agentscope.models.anthropic_model.AnthropicChatWrapper method)</a>
 
       <ul>
+        <li><a href="agentscope.models.html#agentscope.models.AnthropicChatWrapper.format">(agentscope.models.AnthropicChatWrapper method)</a>
+</li>
+        <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.format">(agentscope.models.dashscope_model.DashScopeChatWrapper method)</a>
+</li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeMultiModalWrapper.format">(agentscope.models.dashscope_model.DashScopeMultiModalWrapper method)</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeWrapperBase.format">(agentscope.models.dashscope_model.DashScopeWrapperBase method)</a>
@@ -2332,12 +2343,6 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.rpc.html#agentscope.rpc.RpcClient.get_server_info">(agentscope.rpc.RpcClient method)</a>
 </li>
         <li><a href="agentscope.server.servicer.html#agentscope.server.servicer.AgentServerServicer.get_server_info">(agentscope.server.servicer.AgentServerServicer method)</a>
-</li>
-      </ul></li>
-      <li><a href="agentscope.models.model.html#agentscope.models.model.ModelWrapperBase.get_wrapper">get_wrapper() (agentscope.models.model.ModelWrapperBase class method)</a>
-
-      <ul>
-        <li><a href="agentscope.models.html#agentscope.models.ModelWrapperBase.get_wrapper">(agentscope.models.ModelWrapperBase class method)</a>
 </li>
       </ul></li>
       <li><a href="agentscope.environment.event.html#agentscope.environment.event.Getable">Getable (class in agentscope.environment.event)</a>
@@ -2680,9 +2685,11 @@ window.addEventListener("load", () => mermaid.run());
       </ul></li>
       <li><a href="agentscope.manager.html#agentscope.manager.ModelManager.model_configs">model_configs (agentscope.manager.ModelManager attribute)</a>
 </li>
-      <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.model_name">model_name (agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
+      <li><a href="agentscope.models.anthropic_model.html#agentscope.models.anthropic_model.AnthropicChatWrapper.model_name">model_name (agentscope.models.anthropic_model.AnthropicChatWrapper attribute)</a>
 
       <ul>
+        <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.model_name">(agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
+</li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeImageSynthesisWrapper.model_name">(agentscope.models.dashscope_model.DashScopeImageSynthesisWrapper attribute)</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeMultiModalWrapper.model_name">(agentscope.models.dashscope_model.DashScopeMultiModalWrapper attribute)</a>
@@ -2724,9 +2731,13 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.models.zhipu_model.html#agentscope.models.zhipu_model.ZhipuAIEmbeddingWrapper.model_name">(agentscope.models.zhipu_model.ZhipuAIEmbeddingWrapper attribute)</a>
 </li>
       </ul></li>
-      <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.model_type">model_type (agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
+      <li><a href="agentscope.models.anthropic_model.html#agentscope.models.anthropic_model.AnthropicChatWrapper.model_type">model_type (agentscope.models.anthropic_model.AnthropicChatWrapper attribute)</a>
 
       <ul>
+        <li><a href="agentscope.models.html#agentscope.models.AnthropicChatWrapper.model_type">(agentscope.models.AnthropicChatWrapper attribute)</a>
+</li>
+        <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeChatWrapper.model_type">(agentscope.models.dashscope_model.DashScopeChatWrapper attribute)</a>
+</li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeImageSynthesisWrapper.model_type">(agentscope.models.dashscope_model.DashScopeImageSynthesisWrapper attribute)</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#agentscope.models.dashscope_model.DashScopeMultiModalWrapper.model_type">(agentscope.models.dashscope_model.DashScopeMultiModalWrapper attribute)</a>
@@ -2808,6 +2819,8 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.models.html#agentscope.models.ZhipuAIEmbeddingWrapper.model_type">(agentscope.models.ZhipuAIEmbeddingWrapper attribute)</a>
 </li>
       </ul></li>
+      <li><a href="agentscope.manager.html#agentscope.manager.ModelManager.model_wrapper_mapping">model_wrapper_mapping (agentscope.manager.ModelManager attribute)</a>
+</li>
       <li><a href="agentscope.manager.html#agentscope.manager.ModelManager">ModelManager (class in agentscope.manager)</a>
 </li>
       <li><a href="agentscope.web.workstation.workflow_node.html#agentscope.web.workstation.workflow_node.ModelNode">ModelNode (class in agentscope.web.workstation.workflow_node)</a>
@@ -2871,6 +2884,8 @@ window.addEventListener("load", () => mermaid.run());
         <li><a href="agentscope.message.msg.html#module-agentscope.message.msg">agentscope.message.msg</a>
 </li>
         <li><a href="agentscope.models.html#module-agentscope.models">agentscope.models</a>
+</li>
+        <li><a href="agentscope.models.anthropic_model.html#module-agentscope.models.anthropic_model">agentscope.models.anthropic_model</a>
 </li>
         <li><a href="agentscope.models.dashscope_model.html#module-agentscope.models.dashscope_model">agentscope.models.dashscope_model</a>
 </li>
@@ -3549,6 +3564,12 @@ window.addEventListener("load", () => mermaid.run());
       </ul></li>
       <li><a href="agentscope.tokens.html#agentscope.tokens.register_model">register_model() (in module agentscope.tokens)</a>
 </li>
+      <li><a href="agentscope.manager.html#agentscope.manager.ModelManager.register_model_wrapper_class">register_model_wrapper_class() (agentscope.manager.ModelManager method)</a>
+
+      <ul>
+        <li><a href="agentscope.html#agentscope.register_model_wrapper_class">(in module agentscope)</a>
+</li>
+      </ul></li>
       <li><a href="agentscope.environment.event.html#agentscope.environment.event.Holdable.release">release() (agentscope.environment.event.Holdable method)</a>
 </li>
       <li><a href="agentscope.environment.html#agentscope.environment.BasicEnv.remove_child">remove_child() (agentscope.environment.BasicEnv method)</a>
@@ -3615,14 +3636,14 @@ window.addEventListener("load", () => mermaid.run());
       </ul></li>
       <li><a href="agentscope.exception.html#agentscope.exception.RequiredFieldNotFoundError">RequiredFieldNotFoundError</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.agents.agent.html#agentscope.agents.agent.AgentBase.reset_audience">reset_audience() (agentscope.agents.agent.AgentBase method)</a>
 
       <ul>
         <li><a href="agentscope.agents.html#agentscope.agents.AgentBase.reset_audience">(agentscope.agents.AgentBase method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="agentscope.web.gradio.studio.html#agentscope.web.gradio.studio.reset_glb_var">reset_glb_var() (in module agentscope.web.gradio.studio)</a>
 </li>
       <li><a href="agentscope.service.execute_code.exec_notebook.html#agentscope.service.execute_code.exec_notebook.NoteBookExecutor.reset_notebook">reset_notebook() (agentscope.service.execute_code.exec_notebook.NoteBookExecutor method)</a>
