@@ -8,7 +8,7 @@
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01cdjhVE1wwt5Auv7bY_!!6000000006373-0-tps-1792-1024.jpg" width="600" alt="agentscope-logo">
 </h1>
 
-LLMを活用したマルチエージェントアプリケーションをより簡単に構築する。
+LLMを活用したマルチエージェントアプリケーションをより簡単に構築する
 
 [![](https://img.shields.io/badge/cs.MA-2402.14034-B31C1C?logo=arxiv&logoColor=B31C1C)](https://arxiv.org/abs/2402.14034)
 [![](https://img.shields.io/badge/python-3.9+-blue)](https://pypi.org/project/agentscope/)
