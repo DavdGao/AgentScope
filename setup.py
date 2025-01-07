@@ -6,7 +6,7 @@ import re
 
 import setuptools
 
-# obtain version from src/agentscope/_version.py
+# obtain version from src/agentscope/_version.py.
 with open("src/agentscope/_version.py", encoding="UTF-8") as f:
     VERSION = re.search(
         r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
