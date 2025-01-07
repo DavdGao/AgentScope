@@ -2,7 +2,7 @@ English | [**中文**](https://github.com/modelscope/agentscope/blob/main/README
 
 <a href="https://trendshift.io/repositories/10079" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10079" alt="modelscope%2Fagentscope | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-# AgentScopee
+# AgentScopeee
 
 <h1 align="left">
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01cdjhVE1wwt5Auv7bY_!!6000000006373-0-tps-1792-1024.jpg" width="600" alt="agentscope-logo">
