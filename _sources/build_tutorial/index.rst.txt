@@ -11,40 +11,6 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This section is redirected to the conversation_with_web_browser_agent/README.md.">
-
-.. only:: html
-
-  .. image:: /build_tutorial/images/thumb/sphx_glr_web_browser_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_build_tutorial_web_browser.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Web Browser Control</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Workstation ------------------">
-
-.. only:: html
-
-  .. image:: /build_tutorial/images/thumb/sphx_glr_low_code_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_build_tutorial_low_code.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Low-code Development</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="AgentScope supports various visual interfaces for better user experience, including Gradio and AgentScope Studio.">
 
 .. only:: html
@@ -91,6 +57,40 @@
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Distribution</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Workstation ------------------">
+
+.. only:: html
+
+  .. image:: /build_tutorial/images/thumb/sphx_glr_low_code_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_build_tutorial_low_code.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Low-code Development</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This section is redirected to the conversation_with_web_browser_agent/README.md.">
+
+.. only:: html
+
+  .. image:: /build_tutorial/images/thumb/sphx_glr_web_browser_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_build_tutorial_web_browser.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Web Browser Control</div>
     </div>
 
 
@@ -325,11 +325,11 @@
 .. toctree::
    :hidden:
 
-   /build_tutorial/web_browser
-   /build_tutorial/low_code
    /build_tutorial/visual
    /build_tutorial/examples
    /build_tutorial/distribution
+   /build_tutorial/low_code
+   /build_tutorial/web_browser
    /build_tutorial/quickstart
    /build_tutorial/prompt
    /build_tutorial/message

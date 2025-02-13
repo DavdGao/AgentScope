@@ -187,7 +187,7 @@ dialog agent `alice`.
 
     User input: 
     Bob: Do you know me?
-    Alice: Hello Bob! I don't have any specific information about you other than what you've shared in this conversation. I'm here to help, so feel free to let me know if there's anything you'd like to chat about or any questions you have!
+    Alice: Hi Bob! I don't have any specific information about you beyond what you've shared in our conversation. I'm here to help with any questions or tasks you might have. Is there something in particular you'd like to talk about or get help with?
 
 
 
@@ -243,9 +243,9 @@ We first initialize a `DictDialogAgent` object, and switch between different out
  .. code-block:: none
 
     Charles: ```json
-    {"thought": "Going out in the rain can be refreshing, but it also depends on whether Bob has an umbrella or proper clothing to stay dry and warm. It's important to consider the intensity of the rain and the duration of time he plans to spend outside.", "speak": "It can be nice to go out in the rain, but make sure you have an umbrella or a raincoat. Also, consider if the rain is too heavy or if you'll be out for a long time. What do you think?", "decision": false}
+    {"thought": "Going out in the rain can be refreshing, but it also depends on whether Bob has the right gear and if there are any risks involved, such as lightning or flooding.", "speak": "It could be nice to go out in the rain, but make sure you have an umbrella or a raincoat. Also, check for any weather warnings like thunderstorms or heavy downpours.", "decision": "true"}
     ```
-    The content field: {'thought': "Going out in the rain can be refreshing, but it also depends on whether Bob has an umbrella or proper clothing to stay dry and warm. It's important to consider the intensity of the rain and the duration of time he plans to spend outside.", 'speak': "It can be nice to go out in the rain, but make sure you have an umbrella or a raincoat. Also, consider if the rain is too heavy or if you'll be out for a long time. What do you think?", 'decision': False}
+    The content field: {'thought': 'Going out in the rain can be refreshing, but it also depends on whether Bob has the right gear and if there are any risks involved, such as lightning or flooding.', 'speak': 'It could be nice to go out in the rain, but make sure you have an umbrella or a raincoat. Also, check for any weather warnings like thunderstorms or heavy downpours.', 'decision': 'true'}
     The type of content field: <class 'dict'>
 
 
@@ -282,9 +282,9 @@ Then, we ask the agent to pick a number from 1 to 10.
  .. code-block:: none
 
     Charles: ```json
-    {"thought": "Bob is asking me to pick a number, which seems like a simple and fun request. I'll choose a number at random to keep it interesting.", "speak": "Sure, I'll pick a number. How about 7?", "number": "7"}
+    {"thought": "I should pick a random number to keep the interaction engaging and light-hearted.", "speak": "Sure, I'll pick a number. How about 7?", "number": "7"}
     ```
-    The content of the response message: {'thought': "Bob is asking me to pick a number, which seems like a simple and fun request. I'll choose a number at random to keep it interesting.", 'speak': "Sure, I'll pick a number. How about 7?", 'number': '7'}
+    The content of the response message: {'thought': 'I should pick a random number to keep the interaction engaging and light-hearted.', 'speak': "Sure, I'll pick a number. How about 7?", 'number': '7'}
 
 
 
@@ -333,9 +333,9 @@ while the `speak` field should be displayed to the user, and the `decision` fiel
  .. code-block:: none
 
     Charles: ```json
-    {"thought": "Bob is asking for a number between 20 and 30. I'll pick a number randomly from this range to keep it engaging.", "speak": "Alright, let's go with 23.", "number": "23"}
+    {"thought": "I should pick a random number between 20 and 30 to continue the interaction in a fun way.", "speak": "Alright, I'll go with 23. How about that?", "number": "23"}
     ```
-    The content field: Alright, let's go with 23.
+    The content field: Alright, I'll go with 23. How about that?
     The type of content field: <class 'str'>
 
     The metadata field: 23
@@ -420,29 +420,12 @@ Then we initialize a `ReActAgent` to solve the given problem.
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    David: <thought>To calculate the multiplication of 151513434 and 54353453453, I will use the execute_python_code function. Since this is a simple arithmetic operation, there's no need to use Docker for security reasons.</thought>
+    David: <thought>I need to use the execute_python_code function to perform the multiplication of these two numbers.</thought>
     <function>execute_python_code</function>
-    <code>151513434 * 54353453453</code>
-    <use_docker>False</use_docker>
+    <code>151513434*54353453453</code>
     system: 1. Execute function execute_python_code
        [ARGUMENTS]:
-           code: 151513434 * 54353453453
-                    use_docker: False
-       [STATUS]: FAILED
-       [RESULT]: Failed to pull Docker image: 400 Client Error for http+docker://localhost/v1.45/images/create?tag=latest&fromImage=False: Bad Request ("invalid reference format: repository name (library/False) must be lowercase")
-
-    system: Respond with specific tags as outlined below:
-    <thought>{what you thought}</thought>
-    <function>{the function name you want to call}</function>
-    <{argument name}>{argument value}</{argument name}>
-    <{argument name}>{argument value}</{argument name}>
-    ...
-    David: <thought>The function call failed because there was a misunderstanding with the use_docker argument. Since I set use_docker to False, it should not attempt to pull a Docker image. I will try again without specifying the use_docker argument, which defaults to True and will execute the code in a secure Docker container.</thought>
-    <function>execute_python_code</function>
-    <code>151513434 * 54353453453</code>
-    system: 1. Execute function execute_python_code
-       [ARGUMENTS]:
-           code: 151513434 * 54353453453
+           code: 151513434*54353453453
        [STATUS]: SUCCESS
        [RESULT]: 
 
@@ -452,9 +435,9 @@ Then we initialize a `ReActAgent` to solve the given problem.
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    David: <thought>The calculation was successful and the result has been obtained. Now I can provide the result to Bob.</thought>
+    David: <thought>The multiplication has been successfully computed. Now, I need to provide the result back to Bob.</thought>
     <function>finish</function>
-    <response>The result of 151513434 multiplied by 54353453453 is 8216607612789575262.</response>
+    <response>The result of 151513434 multiplied by 54353453453 is 8210706839275080602.</response>
 
 
 
@@ -469,7 +452,7 @@ Refer to the RAG Section for more details.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 36.935 seconds)
+   **Total running time of the script:** (0 minutes 32.979 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_builtin_agent.py:
