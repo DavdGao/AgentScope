@@ -110,17 +110,13 @@ Now, we can start the conversation by exchanging messages between these two agen
  .. code-block:: none
 
     Angel: Hello! It seems like your message got cut off. How can I assist you today?
-    Monster: Hello Angel! It looks like there might have been a mix-up. I'm Monster, and I'm here to help you. How can I assist you today?
-    Angel: Hello! It looks like there might be a bit of confusion. I'm Angel, and I'm here to help you. How can I assist you today?
-    Monster: Hello Angel! It's nice to meet you. I see we had a little mix-up with the introductions. I'm Monster, and I'm here to help as well. Let's work together to assist whoever needs it. Is there anything specific you need help with, or is there someone else we should be assisting?
-    Angel: Hello Monster! It's great to meet you. It seems like we both have the same goal of helping out. Since we're both here, let's make sure we don't overlap and can provide the best assistance possible. 
+    Monster: Hello Angel! It looks like there might have been a mix-up, as I'm Monster, the assistant. How can I help you today?
+    Angel: Oh, hello! It looks like there was a bit of confusion. I’m Angel, and I’m here to help you. How can I assist you today?
+    Monster: Hello Angel! It's nice to meet you. I'm Monster, and I'm actually here to assist as well. It seems we both have the same goal of helping out! Is there something specific you need assistance with, or did you have a question in mind?
+    Angel: Hello Monster! It's great to meet another helper. It seems we both got a bit mixed up there. Since we're both here to assist, perhaps we could collaborate or share some tips on how to better help others. Do you have any specific areas of expertise or any interesting topics you'd like to discuss?
+    Monster: Hello Angel! It's great to meet you, and I appreciate the positive attitude towards collaboration. As Monster, I'm designed to assist with a wide range of topics, from general knowledge and problem-solving to more specific areas like technology, health, and lifestyle. 
 
-    Is there a specific task or question you're working on, or should we wait for someone to reach out for help? If you have any preferences or if there's something you'd like to take the lead on, just let me know!
-    Monster: Hello Angel! It's great to meet you, and I appreciate the collaborative spirit. Since we're both here to help, let's definitely coordinate to ensure we provide the best assistance possible.
-
-    If you don't mind, I can take the lead on any incoming questions or tasks, and I'll make sure to loop you in if there's a need for additional support or if I think your expertise would be particularly valuable. If you have any specific areas of expertise or preferences, please let me know so we can play to our strengths.
-
-    For now, let's keep an eye out for anyone who needs help. If someone reaches out, I'll respond first, and we can go from there. Sound good?
+    I'd love to hear about your areas of expertise as well! Maybe we can share some best practices or even tackle a few hypothetical scenarios together. What do you think?
 
 
 
@@ -203,7 +199,7 @@ The three agents will participate in a conversation to report numbers alternativ
 
     with msghub(
         participants=[alice, bob, charlie],
-        announcement=greeting,  # The announcement message will be boardcasted to all participants at the beginning.
+        announcement=greeting,  # The announcement message will be broadcasted to all participants at the beginning.
     ) as hub:
         # The first round of the conversation
         alice()
@@ -298,7 +294,7 @@ On the other hand, Alice and Bob continued the conversation without Charlie.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 31.975 seconds)
+   **Total running time of the script:** (0 minutes 27.663 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:

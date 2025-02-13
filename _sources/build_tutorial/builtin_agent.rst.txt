@@ -187,7 +187,7 @@ dialog agent `alice`.
 
     User input: 
     Bob: Do you know me?
-    Alice: Hi Bob! I don't have any specific information about you beyond what you've shared in our conversation. I'm here to help with any questions or tasks you might have. Is there something in particular you'd like to talk about or get help with?
+    Alice: Hello Bob! I don't have any specific information about you other than your name from our conversation. I'm here to help, so if you'd like to share more or if there's something in particular you need assistance with, feel free to let me know!
 
 
 
@@ -243,9 +243,9 @@ We first initialize a `DictDialogAgent` object, and switch between different out
  .. code-block:: none
 
     Charles: ```json
-    {"thought": "Going out in the rain can be refreshing, but it also depends on whether Bob has the right gear and if there are any risks involved, such as lightning or flooding.", "speak": "It could be nice to go out in the rain, but make sure you have an umbrella or a raincoat. Also, check for any weather warnings like thunderstorms or heavy downpours.", "decision": "true"}
+    {"thought": "Going out in the rain can be refreshing and fun, but it also depends on the temperature, if you have appropriate clothing, and if there are any risks like thunderstorms. It's important to consider these factors before deciding.", "speak": "It could be nice to go out in the rain, but make sure to check the weather for any warnings and dress appropriately. Do you have a raincoat or an umbrella?", "decision": false}
     ```
-    The content field: {'thought': 'Going out in the rain can be refreshing, but it also depends on whether Bob has the right gear and if there are any risks involved, such as lightning or flooding.', 'speak': 'It could be nice to go out in the rain, but make sure you have an umbrella or a raincoat. Also, check for any weather warnings like thunderstorms or heavy downpours.', 'decision': 'true'}
+    The content field: {'thought': "Going out in the rain can be refreshing and fun, but it also depends on the temperature, if you have appropriate clothing, and if there are any risks like thunderstorms. It's important to consider these factors before deciding.", 'speak': 'It could be nice to go out in the rain, but make sure to check the weather for any warnings and dress appropriately. Do you have a raincoat or an umbrella?', 'decision': False}
     The type of content field: <class 'dict'>
 
 
@@ -282,9 +282,9 @@ Then, we ask the agent to pick a number from 1 to 10.
  .. code-block:: none
 
     Charles: ```json
-    {"thought": "I should pick a random number to keep the interaction engaging and light-hearted.", "speak": "Sure, I'll pick a number. How about 7?", "number": "7"}
+    {"thought": "I need to pick a random number between 1 and 10. Let's go with 7, as it is often considered a lucky number.", "speak": "I picked the number 7. How about you, do you have a favorite number?", "number": "7"}
     ```
-    The content of the response message: {'thought': 'I should pick a random number to keep the interaction engaging and light-hearted.', 'speak': "Sure, I'll pick a number. How about 7?", 'number': '7'}
+    The content of the response message: {'thought': "I need to pick a random number between 1 and 10. Let's go with 7, as it is often considered a lucky number.", 'speak': 'I picked the number 7. How about you, do you have a favorite number?', 'number': '7'}
 
 
 
@@ -333,12 +333,12 @@ while the `speak` field should be displayed to the user, and the `decision` fiel
  .. code-block:: none
 
     Charles: ```json
-    {"thought": "I should pick a random number between 20 and 30 to continue the interaction in a fun way.", "speak": "Alright, I'll go with 23. How about that?", "number": "23"}
+    {"thought": "I need to pick a random number between 20 and 30. Let's choose 25, as it is right in the middle of the range.", "speak": "I picked the number 25. Do you have a specific reason for this range?", "number": "25"}
     ```
-    The content field: Alright, I'll go with 23. How about that?
+    The content field: I picked the number 25. Do you have a specific reason for this range?
     The type of content field: <class 'str'>
 
-    The metadata field: 23
+    The metadata field: 25
     The type of metadata field: <class 'str'>
 
 
@@ -420,7 +420,7 @@ Then we initialize a `ReActAgent` to solve the given problem.
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    David: <thought>I need to use the execute_python_code function to perform the multiplication of these two numbers.</thought>
+    David: <thought>I need to use the execute_python_code function to perform the multiplication of the two numbers provided by Bob.</thought>
     <function>execute_python_code</function>
     <code>151513434*54353453453</code>
     system: 1. Execute function execute_python_code
@@ -435,9 +435,9 @@ Then we initialize a `ReActAgent` to solve the given problem.
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    David: <thought>The multiplication has been successfully computed. Now, I need to provide the result back to Bob.</thought>
+    David: <thought>The multiplication has been successfully calculated, and now I can provide the result to Bob.</thought>
     <function>finish</function>
-    <response>The result of 151513434 multiplied by 54353453453 is 8210706839275080602.</response>
+    <response>The result of 151513434 multiplied by 54353453453 is 8207072266968558222.</response>
 
 
 
@@ -452,7 +452,7 @@ Refer to the RAG Section for more details.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 32.979 seconds)
+   **Total running time of the script:** (0 minutes 38.797 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_builtin_agent.py:
