@@ -32,7 +32,9 @@ except ImportError:
     parse = None
 
 
-def _get_type_str(cls: Any) -> Optional[Union[str, list]]:
+def _get_type_str(  # pylint: disable=too-many-branches
+    cls: Any,
+) -> Optional[Union[str, list]]:
     """Get the type string."""
     type_str = None
     if hasattr(cls, "__origin__"):
@@ -50,8 +52,10 @@ def _get_type_str(cls: Any) -> Optional[Union[str, list]]:
         # Normal class
         if cls is str:
             type_str = "string"
-        elif cls in [float, int, complex]:
+        elif cls in [float, complex]:
             type_str = "number"
+        elif cls is int:
+            type_str = "integer"
         elif cls is bool:
             type_str = "boolean"
         elif cls in [list, tuple]:
@@ -555,6 +559,13 @@ class ServiceToolkit:
                 try:
                     required_type = _get_type_str(args_types[key])
                     arg_property["type"] = required_type
+                    if required_type == "array":
+                        array_item_typs = get_args(args_types[key])
+                        if len(array_item_typs) != 0:
+                            arg_property["items"] = {
+                                "type": _get_type_str(array_item_typs[0]),
+                            }
+
                 except Exception:
                     logger.warning(
                         f"Fail and skip to get the type of the "

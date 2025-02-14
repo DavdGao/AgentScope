@@ -38,8 +38,8 @@ from ...constants import (
 
 def execute_python_code(
     code: str,
-    timeout: Optional[Union[int, float]] = 300,
-    use_docker: Optional[Union[bool, str]] = None,
+    timeout: Optional[int] = 300,
+    use_docker: bool = False,
     maximum_memory_bytes: Optional[int] = None,
 ) -> ServiceResponse:
     """
@@ -184,12 +184,6 @@ def _execute_python_code_sys(
     being maliciously harmful is low, yet there exists a risk of unintended
     destructive behavior arising from the model's limitations or misalignment.
     """
-    logger.warning(
-        "Executing code in system environments. There exists a risk of "
-        "unintended destructive behavior. Please consider using a "
-        "containerized environment.",
-    )
-
     manager = multiprocessing.Manager()
     shared_list = manager.list()
 

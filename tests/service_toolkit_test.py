@@ -411,6 +411,71 @@ confident in the safety of the code being executed.
             },
         )
 
+    def test_array_argument(self) -> None:
+        """Test array argument in tool function."""
+
+        def func(
+            a: list,
+            b: list[int],
+            c: list[str],
+            d: list[float],
+            e: list[bool],
+        ) -> list:
+            return a + b + c + d + e
+
+        toolkit = ServiceToolkit()
+        toolkit.add(func)
+
+        self.assertDictEqual(
+            toolkit.json_schemas["func"],
+            {
+                "type": "function",
+                "function": {
+                    "name": "func",
+                    "description": "",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "d": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number",
+                                },
+                            },
+                            "a": {
+                                "type": "array",
+                            },
+                            "e": {
+                                "type": "array",
+                                "items": {
+                                    "type": "boolean",
+                                },
+                            },
+                            "c": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                },
+                            },
+                            "b": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                },
+                            },
+                        },
+                        "required": [
+                            "a",
+                            "b",
+                            "c",
+                            "d",
+                            "e",
+                        ],
+                    },
+                },
+            },
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
