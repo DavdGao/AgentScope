@@ -264,12 +264,12 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    Friday: <thought>用户希望计算两个大数的乘积。这个任务可以通过执行一个简单的 shell 命令来完成，该命令使用标准算术运算符。</thought>
+    Friday: <thought>用户想要计算两个大数的乘积。我需要使用execute_shell_command函数来执行这个计算。</thought>
     <function>execute_shell_command</function>
-    <command>expr 1615114134 \* 4343434343</command>
+    <command>echo $((1615114134*4343434343))</command>
     system: 1. Execute function execute_shell_command
        [ARGUMENTS]:
-           command: expr 1615114134 \* 4343434343
+           command: echo $((1615114134*4343434343))
        [STATUS]: SUCCESS
        [RESULT]: 7015142197480303962
 
@@ -279,9 +279,9 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    Friday: <thought>已经得到了两个数相乘的结果，现在可以直接把这个结果告诉用户。</thought>
+    Friday: <thought>已经成功计算出了1615114134和4343434343的乘积，结果为7015142197480303962。现在我可以把这个结果告诉用户了。</thought>
     <function>finish</function>
-    <response>计算 1615114134 * 4343434343 的结果是 7015142197480303962。</response>
+    <response>1615114134和4343434343的乘积是7015142197480303962。</response>
 
 
 
@@ -326,7 +326,7 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 11.608 seconds)
+   **Total running time of the script:** (0 minutes 12.676 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_tool.py:

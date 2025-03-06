@@ -111,12 +111,12 @@ AgentScope 中，不同智能体之间通过“显式的消息交换”来构建
 
  .. code-block:: none
 
-    Angel: 嗨！有什么我能帮你的吗？
-    Monster: 嗨，我需要一些训练建议。
-    Angel: 当然，你想提高哪方面的技能？是声乐技巧还是舞台表现力？
-    Monster: Monster: 是体能和速度。
-    Angel: 了解，体能和速度的提升关键在于定期训练。可以试试短跑、间歇跑来提高速度，结合力量训练增强体能。记得热身和拉伸，避免受伤。
-    Monster: 好，我会试试短跑和力量训练。谢谢建议。
+    Angel: 嗨，有什么想聊的吗？音乐、创作还是其他什么？
+    Monster: 嗨，我对训练和比赛更感兴趣。你想聊哪方面的？
+    Angel: 我对训练和比赛不太在行，但我很乐意听你分享你的兴趣。你想从哪里开始聊起？
+    Monster: 我通常专注于力量和速度训练，比赛时则全神贯注于表现。你对这方面好奇吗？
+    Angel: 我对你的训练方式挺好奇的，虽然我不做这方面的训练，但听你分享肯定能学到不少。你是怎么安排日常训练的？
+    Monster: 我一般会把训练分成几个部分，首先是热身，确保身体准备好。接着是力量训练，针对不同的肌肉群。然后是速度和敏捷性练习，最后是恢复和拉伸。每次训练都尽量有针对性，根据比赛的需求调整强度和内容。
 
 
 
@@ -299,7 +299,7 @@ AgentScope 中，不同智能体之间通过“显式的消息交换”来构建
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 21.072 seconds)
+   **Total running time of the script:** (0 minutes 22.341 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:

@@ -294,12 +294,12 @@ The following tool functions are available in the format of
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 ...
-Friday: &lt;thought&gt;用户希望计算两个大数的乘积。这个任务可以通过执行一个简单的 shell 命令来完成，该命令使用标准算术运算符。&lt;/thought&gt;
+Friday: &lt;thought&gt;用户想要计算两个大数的乘积。我需要使用execute_shell_command函数来执行这个计算。&lt;/thought&gt;
 &lt;function&gt;execute_shell_command&lt;/function&gt;
-&lt;command&gt;expr 1615114134 \* 4343434343&lt;/command&gt;
+&lt;command&gt;echo $((1615114134*4343434343))&lt;/command&gt;
 system: 1. Execute function execute_shell_command
    [ARGUMENTS]:
-       command: expr 1615114134 \* 4343434343
+       command: echo $((1615114134*4343434343))
    [STATUS]: SUCCESS
    [RESULT]: 7015142197480303962
 
@@ -309,9 +309,9 @@ system: Respond with specific tags as outlined below:
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 ...
-Friday: &lt;thought&gt;已经得到了两个数相乘的结果，现在可以直接把这个结果告诉用户。&lt;/thought&gt;
+Friday: &lt;thought&gt;已经成功计算出了1615114134和4343434343的乘积，结果为7015142197480303962。现在我可以把这个结果告诉用户了。&lt;/thought&gt;
 &lt;function&gt;finish&lt;/function&gt;
-&lt;response&gt;计算 1615114134 * 4343434343 的结果是 7015142197480303962。&lt;/response&gt;
+&lt;response&gt;1615114134和4343434343的乘积是7015142197480303962。&lt;/response&gt;
 </pre></div>
 </div>
 </section>
@@ -338,7 +338,7 @@ Friday: &lt;thought&gt;已经得到了两个数相乘的结果，现在可以直
     <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 11.608 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.676 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-build-tutorial-tool-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9682e4a38fd7e8b6971e1afe68e967ff/tool.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tool.ipynb</span></code></a></p>
