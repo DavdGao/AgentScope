@@ -21,7 +21,7 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/language_switch.js?v=6d1ec912"></script>
     <script src="../_static/js/theme.js"></script>
@@ -93,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="visual.html">Visual Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitor.html">Configuring and Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tool.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MCP.html">MCP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rag.html">Retrieval Augmentation Generation (RAG)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="distribution.html">Distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prompt_optimization.html">System Prompt Optimization</a></li>
@@ -109,17 +110,17 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Docs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.html">agentscope package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.message.html">agentscope.message package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.models.html">agentscope.models package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.agents.html">agentscope.agents package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.memory.html">agentscope.memory package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.parsers.html">agentscope.parsers package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.rag.html">agentscope.rag package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.service.html">agentscope.service package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.prompt.html">agentscope.prompt package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.tokens.html">agentscope.tokens module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.exception.html">agentscope.exception module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.html">agentscope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.message.html">agentscope.message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.models.html">agentscope.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.agents.html">agentscope.agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.memory.html">agentscope.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.parsers.html">agentscope.parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.rag.html">agentscope.rag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.service.html">agentscope.service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.prompt.html">agentscope.prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.tokens.html">agentscope.tokens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build_api/agentscope.exception.html">agentscope.exception</a></li>
 </ul>
 
         </div>
@@ -261,7 +262,7 @@ dialog agent <cite>alice</cite>.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>User input:
 Bob: Do you know me?
-Alice: Hello Bob! I don&#39;t have any specific information about you other than what you&#39;ve shared in our conversation. I&#39;m here to help with any questions or tasks you might have. Is there something in particular you&#39;d like to know or discuss?
+Alice: Hello Bob! I don&#39;t have any specific information about you other than your name from our conversation. I&#39;m here to help, so if there&#39;s anything you&#39;d like to share or any questions you have, feel free to let me know!
 </pre></div>
 </div>
 </section>
@@ -298,9 +299,9 @@ Alice: Hello Bob! I don&#39;t have any specific information about you other than
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Charles: ```json
-{&quot;thought&quot;: &quot;Going out in the rain can be refreshing, but it also depends on the temperature and if Bob has the right gear to stay dry and warm. I should consider these factors.&quot;, &quot;speak&quot;: &quot;It can be nice to go out in the rain, but make sure you have an umbrella or a raincoat to stay dry. If it&#39;s cold, also think about staying warm. Do you have what you need?&quot;, &quot;decision&quot;: false}
+{&quot;thought&quot;: &quot;Going out in the rain can be refreshing and fun, but it also depends on the temperature, if one has proper gear, and personal health conditions. It&#39;s not a good idea if it&#39;s too cold or if someone might get sick easily from being wet.&quot;, &quot;speak&quot;: &quot;It can be nice to go out in the rain, especially if you have the right clothing like a raincoat and boots. However, if it&#39;s very cold or if getting wet could make you ill, it might be better to stay inside. What do you think about the weather today?&quot;, &quot;decision&quot;: false}
 ```
-The content field: {&#39;thought&#39;: &#39;Going out in the rain can be refreshing, but it also depends on the temperature and if Bob has the right gear to stay dry and warm. I should consider these factors.&#39;, &#39;speak&#39;: &quot;It can be nice to go out in the rain, but make sure you have an umbrella or a raincoat to stay dry. If it&#39;s cold, also think about staying warm. Do you have what you need?&quot;, &#39;decision&#39;: False}
+The content field: {&#39;thought&#39;: &quot;Going out in the rain can be refreshing and fun, but it also depends on the temperature, if one has proper gear, and personal health conditions. It&#39;s not a good idea if it&#39;s too cold or if someone might get sick easily from being wet.&quot;, &#39;speak&#39;: &quot;It can be nice to go out in the rain, especially if you have the right clothing like a raincoat and boots. However, if it&#39;s very cold or if getting wet could make you ill, it might be better to stay inside. What do you think about the weather today?&quot;, &#39;decision&#39;: False}
 The type of content field: &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
@@ -320,9 +321,9 @@ The type of content field: &lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Charles: ```json
-{&quot;thought&quot;: &quot;Bob might be looking for a random number, so I should pick one without any specific preference.&quot;, &quot;speak&quot;: &quot;Sure, here&#39;s a number: 7. Is there anything else you&#39;re curious about?&quot;, &quot;number&quot;: &quot;7&quot;}
+{&quot;thought&quot;: &quot;I need to pick a random number between 1 and 10. I&#39;ll choose 7, as it&#39;s often considered a lucky number.&quot;, &quot;speak&quot;: &quot;Sure, I&#39;ll pick a number. How about 7?&quot;, &quot;number&quot;: &quot;7&quot;}
 ```
-The content of the response message: {&#39;thought&#39;: &#39;Bob might be looking for a random number, so I should pick one without any specific preference.&#39;, &#39;speak&#39;: &quot;Sure, here&#39;s a number: 7. Is there anything else you&#39;re curious about?&quot;, &#39;number&#39;: &#39;7&#39;}
+The content of the response message: {&#39;thought&#39;: &quot;I need to pick a random number between 1 and 10. I&#39;ll choose 7, as it&#39;s often considered a lucky number.&quot;, &#39;speak&#39;: &quot;Sure, I&#39;ll pick a number. How about 7?&quot;, &#39;number&#39;: &#39;7&#39;}
 </pre></div>
 </div>
 <p>The next question is how to post-process the structured output.
@@ -352,9 +353,9 @@ while the <cite>speak</cite> field should be displayed to the user, and the <cit
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Charles: ```json
-{&quot;thought&quot;: &quot;Bob is asking for a number within a specific range, so I should pick a random number between 20 and 30.&quot;, &quot;speak&quot;: &quot;How about 25? Is there something special you need this number for?&quot;, &quot;number&quot;: &quot;25&quot;}
+{&quot;thought&quot;: &quot;I need to pick a random number between 20 and 30. I&#39;ll choose 25, as it&#39;s right in the middle of the range.&quot;, &quot;speak&quot;: &quot;Sure, I&#39;ll pick a number. How about 25?&quot;, &quot;number&quot;: &quot;25&quot;}
 ```
-The content field: How about 25? Is there something special you need this number for?
+The content field: Sure, I&#39;ll pick a number. How about 25?
 The type of content field: &lt;class &#39;str&#39;&gt;
 
 The metadata field: 25
@@ -422,16 +423,16 @@ system: Respond with specific tags as outlined below:
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 ...
-David: &lt;thought&gt;The multiplication has been successfully calculated, and now I can provide the result to Bob.&lt;/thought&gt;
+David: &lt;thought&gt;The multiplication has been successfully calculated. I will now inform Bob of the result.&lt;/thought&gt;
 &lt;function&gt;finish&lt;/function&gt;
-&lt;response&gt;The result of 151513434 multiplied by 54353453453 is 821763974808716002.&lt;/response&gt;
+&lt;response&gt;The result of 151513434*54353453453 is 8217639145076550262.&lt;/response&gt;
 </pre></div>
 </div>
 </section>
 <section id="llamaindexagent">
 <h2>LlamaIndexAgent<a class="headerlink" href="#llamaindexagent" title="Link to this heading"></a></h2>
 <p>Refer to the RAG Section for more details.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 30.734 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 33.261 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-build-tutorial-builtin-agent-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/46ed2b57b0b63e420edd471093498f41/builtin_agent.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">builtin_agent.ipynb</span></code></a></p>
