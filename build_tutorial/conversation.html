@@ -82,7 +82,7 @@
 <p class="caption" role="heading"><span class="caption-text">Task Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prompt.html">Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">Prompt Formatting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structured_output.html">Structured Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streaming.html">Streaming Mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builtin_agent.html">Built-in Agents</a></li>
@@ -193,22 +193,19 @@ to download the full example code.</p>
     <span class="n">msg</span> <span class="o">=</span> <span class="n">monster</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Angel: Hello! It seems like your message got cut off. Could you please provide more details so I can assist you better?
-Monster: Hello Angel! I apologize for the confusion. It looks like there might have been a mistake, as I didn&#39;t send a previous message. How can I assist you today?
-Angel: Hello Monster! No problem at all, and thank you for clarifying. It&#39;s great to meet you! How can I assist you today? Is there anything specific you&#39;d like to discuss or any questions you have?
-Monster: Hello Angel! It&#39;s nice to meet you too. I&#39;m here to help with any questions or discussions you might have. Whether it&#39;s about technology, science, entertainment, or anything else, feel free to let me know what you&#39;d like to talk about!
-Angel: Hello Monster! Thank you for offering to help. It’s great to have a collaborative conversation!
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Angel: Hello! It seems like your message was cut off. How can I assist you today?
+Monster: Hello! I apologize for the confusion. It looks like there might have been a mix-up, as I&#39;m Monster, not Angel. How can I assist you today?
+Angel: Hello! It&#39;s nice to meet you, Monster. I&#39;m Angel, and I&#39;m here to help. How can I assist you today?
+Monster: Hello Angel! It&#39;s great to meet you. It seems like there might be a bit of confusion, as I&#39;m here to assist you or anyone else who needs help. Is there something specific you need assistance with, or did you have a question for me?
+Angel: Hello Monster! It&#39;s a pleasure to meet you. It seems we both are here to assist, which is wonderful! If you&#39;re open to it, perhaps we can collaborate or just chat. Do you have any specific topics or questions in mind?
+Monster: Hello Angel! It&#39;s a pleasure to meet you as well. I think it&#39;s great that we&#39;re both here to help, and collaborating or just having a chat sounds like a fantastic idea!
 
-Since I’m here to assist, how about we start with something you’re interested in? Do you have any particular topics or questions in mind that you’d like to explore? Or, if you prefer, I can suggest a few topics to get us started. What do you think?
-Monster: Hello Angel! I appreciate the offer. Let&#39;s make this a bit more interactive and fun. How about we pick a topic that could be interesting for both of us? Here are a few suggestions:
+If you have any specific topics or questions in mind, feel free to share. Otherwise, I can suggest a few things we could discuss or work on together. For example, we could:
+- Share tips and best practices for assisting others.
+- Discuss interesting trends or developments in our fields.
+- Exchange fun or thought-provoking conversation starters.
 
-1. **Technology Trends**: We could discuss the latest advancements in technology, such as AI, blockchain, or quantum computing.
-2. **Science and Space Exploration**: We could talk about recent discoveries in space, upcoming missions, or the latest in scientific research.
-3. **Entertainment and Media**: We could chat about movies, TV shows, books, or any other form of media that&#39;s been catching your attention lately.
-4. **Current Events and News**: We could discuss some of the most significant news stories or events happening around the world.
-5. **Hobbies and Interests**: If you have any hobbies or interests, we could explore those and share tips or experiences.
-
-Feel free to pick one of these, or if you have another topic in mind, let me know!
+What do you think?
 </pre></div>
 </div>
 <p>If you want to participate in the conversation, just instantiate a built-in <cite>UserAgent</cite> to type messages to the agents.</p>
@@ -315,7 +312,7 @@ Charlie: 4
 <p>In the above example, Charlie left the conversation after the first round without receiving “4” and “5” from Alice and Bob.
 Therefore, it reported “4” in the second round.
 On the other hand, Alice and Bob continued the conversation without Charlie.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 34.311 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 25.895 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-build-tutorial-conversation-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/e45033d54e8ac8fc32ecea3c60595825/conversation.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">conversation.ipynb</span></code></a></p>

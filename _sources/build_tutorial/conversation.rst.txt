@@ -109,22 +109,19 @@ Now, we can start the conversation by exchanging messages between these two agen
 
  .. code-block:: none
 
-    Angel: Hello! It seems like your message got cut off. Could you please provide more details so I can assist you better?
-    Monster: Hello Angel! I apologize for the confusion. It looks like there might have been a mistake, as I didn't send a previous message. How can I assist you today?
-    Angel: Hello Monster! No problem at all, and thank you for clarifying. It's great to meet you! How can I assist you today? Is there anything specific you'd like to discuss or any questions you have?
-    Monster: Hello Angel! It's nice to meet you too. I'm here to help with any questions or discussions you might have. Whether it's about technology, science, entertainment, or anything else, feel free to let me know what you'd like to talk about!
-    Angel: Hello Monster! Thank you for offering to help. It’s great to have a collaborative conversation! 
+    Angel: Hello! It seems like your message was cut off. How can I assist you today?
+    Monster: Hello! I apologize for the confusion. It looks like there might have been a mix-up, as I'm Monster, not Angel. How can I assist you today?
+    Angel: Hello! It's nice to meet you, Monster. I'm Angel, and I'm here to help. How can I assist you today?
+    Monster: Hello Angel! It's great to meet you. It seems like there might be a bit of confusion, as I'm here to assist you or anyone else who needs help. Is there something specific you need assistance with, or did you have a question for me?
+    Angel: Hello Monster! It's a pleasure to meet you. It seems we both are here to assist, which is wonderful! If you're open to it, perhaps we can collaborate or just chat. Do you have any specific topics or questions in mind?
+    Monster: Hello Angel! It's a pleasure to meet you as well. I think it's great that we're both here to help, and collaborating or just having a chat sounds like a fantastic idea!
 
-    Since I’m here to assist, how about we start with something you’re interested in? Do you have any particular topics or questions in mind that you’d like to explore? Or, if you prefer, I can suggest a few topics to get us started. What do you think?
-    Monster: Hello Angel! I appreciate the offer. Let's make this a bit more interactive and fun. How about we pick a topic that could be interesting for both of us? Here are a few suggestions:
+    If you have any specific topics or questions in mind, feel free to share. Otherwise, I can suggest a few things we could discuss or work on together. For example, we could:
+    - Share tips and best practices for assisting others.
+    - Discuss interesting trends or developments in our fields.
+    - Exchange fun or thought-provoking conversation starters.
 
-    1. **Technology Trends**: We could discuss the latest advancements in technology, such as AI, blockchain, or quantum computing.
-    2. **Science and Space Exploration**: We could talk about recent discoveries in space, upcoming missions, or the latest in scientific research.
-    3. **Entertainment and Media**: We could chat about movies, TV shows, books, or any other form of media that's been catching your attention lately.
-    4. **Current Events and News**: We could discuss some of the most significant news stories or events happening around the world.
-    5. **Hobbies and Interests**: If you have any hobbies or interests, we could explore those and share tips or experiences.
-
-    Feel free to pick one of these, or if you have another topic in mind, let me know!
+    What do you think?
 
 
 
@@ -302,7 +299,7 @@ On the other hand, Alice and Bob continued the conversation without Charlie.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 34.311 seconds)
+   **Total running time of the script:** (0 minutes 25.895 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:
