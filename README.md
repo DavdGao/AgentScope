@@ -1,31 +1,36 @@
 <div align="center">
   <svg width="500" height="300">
-    <style>
-      .node:hover circle {
-        r: 45;
-        transition: r 0.3s ease;
-      }
-      .node:hover text {
-        font-size: larger;
-        transition: font-size 0.3s ease;
-      }
-    </style>
-    <line x1="250" y1="150" x2="150" y2="100" stroke="#999"/>
-    <line x1="250" y1="150" x2="350" y2="100" stroke="#999"/>
-    <a class="node" href="https://github.com/your-link">
-      <circle cx="250" cy="150" r="40" fill="#4CAF50"/>
-      <text x="250" y="155" text-anchor="middle" fill="white">核心</text>
-    </a>
-    <a class="node" href="https://github.com/link1">
-      <circle cx="150" cy="100" r="30" fill="#2196F3"/>
-      <text x="150" y="105" text-anchor="middle" fill="white">节点1</text>
-    </a>
-    <a class="node" href="https://github.com/link2">
-      <circle cx="350" cy="100" r="30" fill="#2196F3"/>
-      <text x="350" y="105" text-anchor="middle" fill="white">节点2</text>
-    </a>
+    <g>
+      <line x1="250" y1="150" x2="150" y2="100" stroke="#999"/>
+      <line x1="250" y1="150" x2="350" y2="100" stroke="#999"/>
+      <a class="node" href="https://github.com/your-link">
+        <circle cx="250" cy="150" r="40" fill="#4CAF50"
+                onmouseover="this.setAttribute('r', '45'); this.style.transition='r 0.3s ease'"
+                onmouseout="this.setAttribute('r', '40'); this.style.transition='r 0.3s ease'"/>
+        <text x="250" y="155" text-anchor="middle" fill="white"
+              onmouseover="this.style.fontSize='larger'; this.style.transition='font-size 0.3s ease'"
+              onmouseout="this.style.fontSize=''; this.style.transition='font-size 0.3s ease'">核心</text>
+      </a>
+      <a class="node" href="https://github.com/link1">
+        <circle cx="150" cy="100" r="30" fill="#2196F3"
+                onmouseover="this.setAttribute('r', '35'); this.style.transition='r 0.3s ease'"
+                onmouseout="this.setAttribute('r', '30'); this.style.transition='r 0.3s ease'"/>
+        <text x="150" y="105" text-anchor="middle" fill="white"
+              onmouseover="this.style.fontSize='larger'; this.style.transition='font-size 0.3s ease'"
+              onmouseout="this.style.fontSize=''; this.style.transition='font-size 0.3s ease'">节点1</text>
+      </a>
+      <a class="node" href="https://github.com/link2">
+        <circle cx="350" cy="100" r="30" fill="#2196F3"
+                onmouseover="this.setAttribute('r', '35'); this.style.transition='r 0.3s ease'"
+                onmouseout="this.setAttribute('r', '30'); this.style.transition='r 0.3s ease'"/>
+        <text x="350" y="105" text-anchor="middle" fill="white"
+              onmouseover="this.style.fontSize='larger'; this.style.transition='font-size 0.3s ease'"
+              onmouseout="this.style.fontSize=''; this.style.transition='font-size 0.3s ease'">节点2</text>
+      </a>
+    </g>
   </svg>
 </div>
+
 
 English | [**中文**](https://github.com/modelscope/agentscope/blob/main/README_ZH.md) | [**日本語**](https://github.com/modelscope/agentscope/blob/main/README_JA.md)
 
