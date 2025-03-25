@@ -109,12 +109,14 @@ Now, we can start the conversation by exchanging messages between these two agen
 
  .. code-block:: none
 
-    Angel: Hello! It seems like your message got cut off. Could you please provide more details so I can assist you better?
-    Monster: Hello Angel! It looks like there might have been a mix-up. I'm Monster, and I'm here to help you. Could you let me know what you need assistance with?
-    Angel: Hello! It looks like there might be a bit of confusion. I'm Angel, and I'm here to help you. Could you please let me know what you need assistance with?
-    Monster: Hello Angel! It's nice to meet you. I see we both are here to help! To clear things up, I'm Monster, and I'm here to assist with any questions or tasks you have. Could you let me know what you need help with today?
-    Angel: Hello! It's nice to meet you, Monster. It seems like we both want to help, but I'm here to assist the user. Could you please let me know what you need help with today?
-    Monster: Hello Angel! It’s great to meet you. I understand that we both are here to help, and I appreciate your initiative. Since we’re both here to assist, let’s make sure we get the user the help they need. Could you please share what you need assistance with today?
+    Angel: Hello! It looks like your message may have been cut off. Could you please provide more details so I can assist you better?
+    Monster: Hello Angel! I'm Monster, your helpful assistant. It seems there might have been a bit of confusion. I didn't send a previous message, but I'm here to help you with anything you need. Could you let me know what you're looking for assistance with today?
+    Angel: Hello! It's nice to meet you, Monster. It seems there might be a bit of a mix-up, as I'm actually Angel, your helpful assistant. How can I assist you today?
+    Monster: Hello Angel! It’s great to meet you. I see there’s a bit of a mix-up, but no worries at all! Since we’re both here to help, let’s make the most of it. Is there anything specific you need assistance with, or is there something you’d like to chat about?
+    Angel: Hello Monster! It's indeed a bit of an unusual situation, but I'm glad we can both be here to help. Since you're also here as an assistant, let's focus on what you need. Is there anything specific you'd like to discuss or any topic you're interested in?
+    Monster: Hello Angel! It's a pleasure to collaborate with you. Since we're both here to assist, let's make this a productive and enjoyable experience. I don't have any specific needs, but I'm always interested in learning and discussing various topics. 
+
+    Is there a particular subject or area you'd like to explore? We could discuss anything from technology and science to literature and current events. Or, if you have any fun or interesting facts to share, I'd love to hear them!
 
 
 
@@ -292,7 +294,7 @@ On the other hand, Alice and Bob continued the conversation without Charlie.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 26.426 seconds)
+   **Total running time of the script:** (0 minutes 30.897 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:
