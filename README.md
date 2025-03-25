@@ -1,3 +1,10 @@
+```mermaid
+graph TD
+    A((核心)) --> B[节点1]
+    A --> C[节点2]
+    A --> D[节点3]
+```
+
 English | [**中文**](https://github.com/modelscope/agentscope/blob/main/README_ZH.md) | [**日本語**](https://github.com/modelscope/agentscope/blob/main/README_JA.md)
 
 <a href="https://trendshift.io/repositories/10079" target="_blank"><img src="https://trendshift.io/api/badge/repositories/10079" alt="modelscope%2Fagentscope | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
@@ -285,99 +292,3 @@ user_agent = UserAgent()
 In AgentScope, **message** is the bridge among agents, which is a
 **dict** that contains two necessary fields `name` and `content` and an
 optional field `url` to local files (image, video or audio) or website.
-
-```python
-from agentscope.message import Msg
-
-x = Msg(name="Alice", content="Hi!")
-x = Msg("Bob", "What about this picture I took?", url="/path/to/picture.jpg")
-```
-
-Start a conversation between two agents (e.g. dialog_agent and user_agent)
-with the following code:
-
-```python
-x = None
-while True:
-    x = dialog_agent(x)
-    x = user_agent(x)
-    if x.content == "exit":  # user input "exit" to exit the conversation_basic
-        break
-```
-
-### AgentScope Studio
-
-AgentScope provides an easy-to-use runtime user interface capable of
-displaying multimodal output on the front end, including text, images,
-audio and video.
-
-Refer to our [tutorial](https://doc.agentscope.io/build_tutorial/visual.html) for more details.
-
-<h5 align="center">
-<img src="https://img.alicdn.com/imgextra/i4/O1CN015kjnkd1xdwJoNxqLZ_!!6000000006467-0-tps-3452-1984.jpg" width="600" alt="agentscope-logo">
-</h5>
-
-## License
-
-AgentScope is released under Apache License 2.0.
-
-## Contributing
-
-Contributions are always welcomed!
-
-We provide a developer version with additional pre-commit hooks to perform
-checks compared to the official version:
-
-```bash
-# For windows
-pip install -e .[dev]
-# For mac
-pip install -e .\[dev\]
-
-# Install pre-commit hooks
-pre-commit install
-```
-
-Please refer to our [Contribution Guide](https://modelscope.github.io/agentscope/en/tutorial/302-contribute.html) for more details.
-
-## Publications
-
-If you find our work helpful for your research or application, please cite our papers.
-
-1. [AgentScope: A Flexible yet Robust Multi-Agent Platform](https://arxiv.org/abs/2402.14034)
-
-    ```
-    @article{agentscope,
-        author  = {Dawei Gao and
-                   Zitao Li and
-                   Xuchen Pan and
-                   Weirui Kuang and
-                   Zhijian Ma and
-                   Bingchen Qian and
-                   Fei Wei and
-                   Wenhao Zhang and
-                   Yuexiang Xie and
-                   Daoyuan Chen and
-                   Liuyi Yao and
-                   Hongyi Peng and
-                   Ze Yu Zhang and
-                   Lin Zhu and
-                   Chen Cheng and
-                   Hongzhu Shi and
-                   Yaliang Li and
-                   Bolin Ding and
-                   Jingren Zhou}
-        title   = {AgentScope: A Flexible yet Robust Multi-Agent Platform},
-        journal = {CoRR},
-        volume  = {abs/2402.14034},
-        year    = {2024},
-    }
-    ```
-
-## Contributors ✨
-
-All thanks to our contributors:
-
-<a href="https://github.com/modelscope/agentscope/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=modelscope/agentscope&max=999&columns=12&anon=1" />
-</a>
