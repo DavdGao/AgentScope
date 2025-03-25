@@ -10,31 +10,22 @@
         transition: font-size 0.3s ease;
       }
     </style>
-
-    <!-- 连接线 -->
     <line x1="250" y1="150" x2="150" y2="100" stroke="#999"/>
     <line x1="250" y1="150" x2="350" y2="100" stroke="#999"/>
-
-    <!-- 中心节点 -->
     <a class="node" href="https://github.com/your-link">
       <circle cx="250" cy="150" r="40" fill="#4CAF50"/>
       <text x="250" y="155" text-anchor="middle" fill="white">核心</text>
     </a>
-
-    <!-- 子节点1 -->
     <a class="node" href="https://github.com/link1">
       <circle cx="150" cy="100" r="30" fill="#2196F3"/>
       <text x="150" y="105" text-anchor="middle" fill="white">节点1</text>
     </a>
-
-    <!-- 子节点2 -->
     <a class="node" href="https://github.com/link2">
       <circle cx="350" cy="100" r="30" fill="#2196F3"/>
       <text x="350" y="105" text-anchor="middle" fill="white">节点2</text>
     </a>
   </svg>
 </div>
-
 
 English | [**中文**](https://github.com/modelscope/agentscope/blob/main/README_ZH.md) | [**日本語**](https://github.com/modelscope/agentscope/blob/main/README_JA.md)
 
