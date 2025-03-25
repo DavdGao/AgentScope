@@ -19,7 +19,6 @@ Subpackages
    agentscope.prompt
    agentscope.rag
    agentscope.rpc
-   agentscope.serialization
    agentscope.server
    agentscope.service
    agentscope.strategy

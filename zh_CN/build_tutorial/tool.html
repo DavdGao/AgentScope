@@ -223,8 +223,8 @@ The following tool functions are available in the format of
 1. execute_shell_command: Executes a given shell command.
         command (string): The shell command to execute.
 2. bing_search: Search question in Bing Search API and return the searching results
-        question (string): The search query string.
         num_results (number): The number of search results to return.
+        question (string): The search query string.
 </pre></div>
 </div>
 <p>内置的默认调用格式:</p>
@@ -266,14 +266,14 @@ The following tool functions are available in the format of
       &quot;parameters&quot;: {
         &quot;type&quot;: &quot;object&quot;,
         &quot;properties&quot;: {
-          &quot;question&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;description&quot;: &quot;The search query string.&quot;
-          },
           &quot;num_results&quot;: {
             &quot;type&quot;: &quot;number&quot;,
             &quot;description&quot;: &quot;The number of search results to return.&quot;,
             &quot;default&quot;: 10
+          },
+          &quot;question&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;The search query string.&quot;
           }
         },
         &quot;required&quot;: [
@@ -339,7 +339,7 @@ The following tool functions are available in the format of
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 ...
-Friday: &lt;thought&gt;用户想要计算两个大数的乘积。我应该使用execute_shell_command函数来执行这个计算。&lt;/thought&gt;
+Friday: &lt;thought&gt;用户想要计算一个乘法问题，我可以通过执行shell命令来完成这个任务。&lt;/thought&gt;
 &lt;function&gt;execute_shell_command&lt;/function&gt;
 &lt;command&gt;echo &quot;1615114134*4343434343&quot; | bc&lt;/command&gt;
 system: 1. Execute function execute_shell_command
@@ -353,13 +353,13 @@ system: Respond with specific tags as outlined below:
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 &lt;{argument name}&gt;{argument value}&lt;/{argument name}&gt;
 ...
-Friday: &lt;thought&gt;已经得到了计算结果，现在可以将结果告诉用户。&lt;/thought&gt;
+Friday: &lt;thought&gt;已经得到了计算结果，现在可以告诉用户了。&lt;/thought&gt;
 &lt;function&gt;finish&lt;/function&gt;
-&lt;response&gt;1615114134 与 4343434343 的乘积是 7015142197480303962。&lt;/response&gt;
+&lt;response&gt;计算结果是 7015142197480303962。&lt;/response&gt;
 system: 1. Execute function finish
    [ARGUMENTS]:
-       {&quot;response&quot;: &quot;1615114134 与 4343434343 的乘积是 7015142197480303962。&quot;}
-   [RESULT]: 1615114134 与 4343434343 的乘积是 7015142197480303962。
+       {&quot;response&quot;: &quot;计算结果是 7015142197480303962。&quot;}
+   [RESULT]: 计算结果是 7015142197480303962。
 </pre></div>
 </div>
 </section>
@@ -432,7 +432,7 @@ system: 1. Execute function finish
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tool_calls: [
     {
         &quot;type&quot;: &quot;tool_use&quot;,
-        &quot;id&quot;: &quot;call_a0511d81df4c4edf9c6353&quot;,
+        &quot;id&quot;: &quot;call_454feca621eb4c25b53259&quot;,
         &quot;name&quot;: &quot;execute_shell_command&quot;,
         &quot;input&quot;: {
             &quot;command&quot;: &quot;whoami&quot;
@@ -460,7 +460,7 @@ system: 1. Execute function finish
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>assistant: [
     {
         &quot;type&quot;: &quot;tool_use&quot;,
-        &quot;id&quot;: &quot;call_a0511d81df4c4edf9c6353&quot;,
+        &quot;id&quot;: &quot;call_454feca621eb4c25b53259&quot;,
         &quot;name&quot;: &quot;execute_shell_command&quot;,
         &quot;input&quot;: {
             &quot;command&quot;: &quot;whoami&quot;
@@ -492,7 +492,7 @@ system: 1. Execute function finish
         &quot;content&quot;: null,
         &quot;tool_calls&quot;: [
             {
-                &quot;id&quot;: &quot;call_a0511d81df4c4edf9c6353&quot;,
+                &quot;id&quot;: &quot;call_454feca621eb4c25b53259&quot;,
                 &quot;type&quot;: &quot;function&quot;,
                 &quot;function&quot;: {
                     &quot;name&quot;: &quot;execute_shell_command&quot;,
@@ -503,7 +503,7 @@ system: 1. Execute function finish
     },
     {
         &quot;role&quot;: &quot;tool&quot;,
-        &quot;tool_call_id&quot;: &quot;call_a0511d81df4c4edf9c6353&quot;,
+        &quot;tool_call_id&quot;: &quot;call_454feca621eb4c25b53259&quot;,
         &quot;content&quot;: &quot;runner&quot;,
         &quot;name&quot;: &quot;execute_shell_command&quot;
     }
@@ -554,7 +554,7 @@ system: 1. Execute function finish
     <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 11.697 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.612 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-build-tutorial-tool-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9682e4a38fd7e8b6971e1afe68e967ff/tool.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tool.ipynb</span></code></a></p>

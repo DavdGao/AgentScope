@@ -83,7 +83,7 @@
 
  .. code-block:: none
 
-    2025-03-25 09:21:17 | INFO     | agentscope.manager._model:load_model_configs:138 - Load configs for model wrapper: my-qwen-vl
+    2025-03-25 09:22:58 | INFO     | agentscope.manager._model:load_model_configs:138 - Load configs for model wrapper: my-qwen-vl
 
 
 
@@ -168,14 +168,14 @@
 
  .. code-block:: none
 
-    2025-03-25 09:21:17 | ERROR    | agentscope.message.msg:__init__:112 - The url argument will be deprecated in the future. Consider using the ContentBlock instead to attach files to the message
-    Monday: 这是一张柱状图，标题为“2023年每个人拥有的苹果数量”。图表显示了三个人（Alice、Bob 和 Charlie）各自拥有的苹果数量。
+    2025-03-25 09:22:58 | ERROR    | agentscope.message.msg:__init__:112 - The url argument will be deprecated in the future. Consider using the ContentBlock instead to attach files to the message
+    Monday: 这是一张柱状图，标题为“The Apples Each Person Has in 2023”，即“每个人在2023年拥有的苹果数量”。图表中有三个人：Alice、Bob和Charlie。每个柱子的高度代表了每个人拥有的苹果数量。
 
-    - Alice 拥有 2 个苹果。
-    - Bob 拥有 1 个苹果。
-    - Charlie 拥有 4 个苹果。
+    - Alice的柱子高度约为2.0个苹果。
+    - Bob的柱子高度约为1.0个苹果。
+    - Charlie的柱子高度约为4.0个苹果。
 
-    从图表中可以看出，Charlie 拥有的苹果数量最多，而 Bob 拥有的苹果数量最少。
+    从图中可以看出，Charlie拥有的苹果数量最多，其次是Alice，最少的是Bob。
 
 
 
@@ -183,7 +183,7 @@
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.337 seconds)
+   **Total running time of the script:** (0 minutes 9.577 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_multimodality.py:

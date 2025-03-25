@@ -146,8 +146,8 @@ AgentScope 提供了一个 `ServiceToolkit` 模块，支持以下功能:
     1. execute_shell_command: Executes a given shell command.
             command (string): The shell command to execute.
     2. bing_search: Search question in Bing Search API and return the searching results
-            question (string): The search query string.
             num_results (number): The number of search results to return.
+            question (string): The search query string.
 
 
 
@@ -226,14 +226,14 @@ AgentScope 提供了一个 `ServiceToolkit` 模块，支持以下功能:
           "parameters": {
             "type": "object",
             "properties": {
-              "question": {
-                "type": "string",
-                "description": "The search query string."
-              },
               "num_results": {
                 "type": "number",
                 "description": "The number of search results to return.",
                 "default": 10
+              },
+              "question": {
+                "type": "string",
+                "description": "The search query string."
               }
             },
             "required": [
@@ -329,7 +329,7 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    Friday: <thought>用户想要计算两个大数的乘积。我应该使用execute_shell_command函数来执行这个计算。</thought>
+    Friday: <thought>用户想要计算一个乘法问题，我可以通过执行shell命令来完成这个任务。</thought>
     <function>execute_shell_command</function>
     <command>echo "1615114134*4343434343" | bc</command>
     system: 1. Execute function execute_shell_command
@@ -343,13 +343,13 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
     <{argument name}>{argument value}</{argument name}>
     <{argument name}>{argument value}</{argument name}>
     ...
-    Friday: <thought>已经得到了计算结果，现在可以将结果告诉用户。</thought>
+    Friday: <thought>已经得到了计算结果，现在可以告诉用户了。</thought>
     <function>finish</function>
-    <response>1615114134 与 4343434343 的乘积是 7015142197480303962。</response>
+    <response>计算结果是 7015142197480303962。</response>
     system: 1. Execute function finish
        [ARGUMENTS]:
-           {"response": "1615114134 与 4343434343 的乘积是 7015142197480303962。"}
-       [RESULT]: 1615114134 与 4343434343 的乘积是 7015142197480303962。
+           {"response": "计算结果是 7015142197480303962。"}
+       [RESULT]: 计算结果是 7015142197480303962。
 
 
 
@@ -468,7 +468,7 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
     tool_calls: [
         {
             "type": "tool_use",
-            "id": "call_a0511d81df4c4edf9c6353",
+            "id": "call_454feca621eb4c25b53259",
             "name": "execute_shell_command",
             "input": {
                 "command": "whoami"
@@ -514,7 +514,7 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
     assistant: [
         {
             "type": "tool_use",
-            "id": "call_a0511d81df4c4edf9c6353",
+            "id": "call_454feca621eb4c25b53259",
             "name": "execute_shell_command",
             "input": {
                 "command": "whoami"
@@ -577,7 +577,7 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
             "content": null,
             "tool_calls": [
                 {
-                    "id": "call_a0511d81df4c4edf9c6353",
+                    "id": "call_454feca621eb4c25b53259",
                     "type": "function",
                     "function": {
                         "name": "execute_shell_command",
@@ -588,7 +588,7 @@ AgentScope 提供了 `ReActAgent` 智能体类来使用工具，只需要将 `Se
         },
         {
             "role": "tool",
-            "tool_call_id": "call_a0511d81df4c4edf9c6353",
+            "tool_call_id": "call_454feca621eb4c25b53259",
             "content": "runner",
             "name": "execute_shell_command"
         }
@@ -674,7 +674,7 @@ AgentScope 支持集成 MCP (Model Context Protocol) 服务器，使模型和工
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 11.697 seconds)
+   **Total running time of the script:** (0 minutes 7.612 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_tool.py:

@@ -267,10 +267,10 @@ AgentScope 已集成了许多不同模态的模型 API 。
 
  .. code-block:: none
 
-    文本：你好！有什么可以帮助你的吗？
+    文本：你好！有什么我能帮助你的吗？
     嵌入：None
     图像URL：None
-    原始响应：{"status_code": 200, "request_id": "c503301b-d82b-933d-a550-2e9f77d91201", "code": "", "message": "", "output": {"text": null, "finish_reason": null, "choices": [{"finish_reason": "stop", "message": {"role": "assistant", "content": "你好！有什么可以帮助你的吗？"}}]}, "usage": {"input_tokens": 10, "output_tokens": 7, "prompt_tokens_details": {"cached_tokens": 0}, "total_tokens": 17}}
+    原始响应：{"status_code": 200, "request_id": "3f1df39a-81ac-98fc-8e0b-14aabc7f1769", "code": "", "message": "", "output": {"text": null, "finish_reason": null, "choices": [{"finish_reason": "stop", "message": {"role": "assistant", "content": "你好！有什么我能帮助你的吗？"}}]}, "usage": {"input_tokens": 10, "output_tokens": 8, "prompt_tokens_details": {"cached_tokens": 0}, "total_tokens": 18}}
     解析后响应：None
     流响应：None
 
@@ -550,7 +550,7 @@ RESTful API
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.603 seconds)
+   **Total running time of the script:** (0 minutes 1.748 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_model.py:

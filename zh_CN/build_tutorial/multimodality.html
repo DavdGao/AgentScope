@@ -180,7 +180,7 @@ to download the full example code.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2025-03-25 09:21:17 | INFO     | agentscope.manager._model:load_model_configs:138 - Load configs for model wrapper: my-qwen-vl
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2025-03-25 09:22:58 | INFO     | agentscope.manager._model:load_model_configs:138 - Load configs for model wrapper: my-qwen-vl
 </pre></div>
 </div>
 <p>为了与智能体进行多模态数据的交互，<cite>Msg</cite> 类提供了一个 <cite>url</cite> 字段。
@@ -213,17 +213,17 @@ to download the full example code.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2025-03-25 09:21:17 | ERROR    | agentscope.message.msg:__init__:112 - The url argument will be deprecated in the future. Consider using the ContentBlock instead to attach files to the message
-Monday: 这是一张柱状图，标题为“2023年每个人拥有的苹果数量”。图表显示了三个人（Alice、Bob 和 Charlie）各自拥有的苹果数量。
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2025-03-25 09:22:58 | ERROR    | agentscope.message.msg:__init__:112 - The url argument will be deprecated in the future. Consider using the ContentBlock instead to attach files to the message
+Monday: 这是一张柱状图，标题为“The Apples Each Person Has in 2023”，即“每个人在2023年拥有的苹果数量”。图表中有三个人：Alice、Bob和Charlie。每个柱子的高度代表了每个人拥有的苹果数量。
 
-- Alice 拥有 2 个苹果。
-- Bob 拥有 1 个苹果。
-- Charlie 拥有 4 个苹果。
+- Alice的柱子高度约为2.0个苹果。
+- Bob的柱子高度约为1.0个苹果。
+- Charlie的柱子高度约为4.0个苹果。
 
-从图表中可以看出，Charlie 拥有的苹果数量最多，而 Bob 拥有的苹果数量最少。
+从图中可以看出，Charlie拥有的苹果数量最多，其次是Alice，最少的是Bob。
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.337 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 9.577 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-build-tutorial-multimodality-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/169c560b862dc25b25a32ca7165ed413/multimodality.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">multimodality.ipynb</span></code></a></p>

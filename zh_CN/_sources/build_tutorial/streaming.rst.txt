@@ -173,8 +173,8 @@ AgentScope 支持在终端和 AgentScope Studio 中以打字机效果显示流�
     0. (False, 'Hello')
     当前text字段: Hello 
 
-    1. (False, 'Hello! How can I')
-    当前text字段: Hello! How can I 
+    1. (False, 'Hello! How can I assist you')
+    当前text字段: Hello! How can I assist you 
 
     2. (False, 'Hello! How can I assist you today?')
     当前text字段: Hello! How can I assist you today? 
@@ -242,7 +242,7 @@ AgentScope 支持在终端和 AgentScope Studio 中以打字机效果显示流�
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.298 seconds)
+   **Total running time of the script:** (0 minutes 2.815 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_streaming.py:
