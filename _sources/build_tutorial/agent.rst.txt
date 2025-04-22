@@ -209,7 +209,7 @@ management, including adding, deleting and getting memory.
 
  .. code-block:: none
 
-    The current memory: [Msg(id='4e1aa197b9aa4df58305c30cb1270ab0', name='system', role='system', content="You're a helpful assistant named Jarvis.", metadata=None, timestamp='2025-03-26 11:45:20'), Msg(id='c80f053756b945cfafd5bbf2d22087e2', name='Stank', role='user', content='Hi!', metadata=None, timestamp='2025-03-26 11:45:20'), Msg(id='3c3bbe31c8dc4ad9bb01296551f4d1c9', name='Jarvis', role='assistant', content='How can I help you?', metadata=None, timestamp='2025-03-26 11:45:20')]
+    The current memory: [Msg(id='1526786c5cc14fe39e665f025a207e18', name='system', role='system', content="You're a helpful assistant named Jarvis.", metadata=None, timestamp='2025-04-22 03:29:17'), Msg(id='725fa314a5fb4ede895c6d53ab22aeb5', name='Stank', role='user', content='Hi!', metadata=None, timestamp='2025-04-22 03:29:17'), Msg(id='b8c1d87f878c4fa4b0387c12974ce876', name='Jarvis', role='assistant', content='How can I help you?', metadata=None, timestamp='2025-04-22 03:29:17')]
     The current size: 3
 
 
@@ -265,7 +265,7 @@ Delete the first message within the memory.
 
  .. code-block:: none
 
-    The memory after deletion: [Msg(id='c80f053756b945cfafd5bbf2d22087e2', name='Stank', role='user', content='Hi!', metadata=None, timestamp='2025-03-26 11:45:20'), Msg(id='3c3bbe31c8dc4ad9bb01296551f4d1c9', name='Jarvis', role='assistant', content='How can I help you?', metadata=None, timestamp='2025-03-26 11:45:20')]
+    The memory after deletion: [Msg(id='725fa314a5fb4ede895c6d53ab22aeb5', name='Stank', role='user', content='Hi!', metadata=None, timestamp='2025-04-22 03:29:17'), Msg(id='b8c1d87f878c4fa4b0387c12974ce876', name='Jarvis', role='assistant', content='How can I help you?', metadata=None, timestamp='2025-04-22 03:29:17')]
     The size after deletion: 2
 
 
@@ -311,11 +311,19 @@ Take DashScope Chat API as an example:
     [
         {
             "role": "system",
-            "content": "You're a helpful assistant named Jarvis."
+            "content": [
+                {
+                    "text": "You're a helpful assistant named Jarvis."
+                }
+            ]
         },
         {
             "role": "user",
-            "content": "## Conversation History\nStank: Hi!\nJarvis: How can I help you?"
+            "content": [
+                {
+                    "text": "## Conversation History\nStank: Hi!\nJarvis: How can I help you?"
+                }
+            ]
         }
     ]
 
@@ -332,7 +340,7 @@ Further Reading
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.407 seconds)
+   **Total running time of the script:** (0 minutes 1.157 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_agent.py:

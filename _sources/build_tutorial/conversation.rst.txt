@@ -109,12 +109,16 @@ Now, we can start the conversation by exchanging messages between these two agen
 
  .. code-block:: none
 
-    Angel: Hello! It seems like your message was cut off. Could you please provide more details so I can assist you better?
-    Monster: Hello Angel! I'm Monster, your helpful assistant. It looks like there might have been a mix-up, as I don't see any previous message from you. How can I assist you today?
-    Angel: Hello! It looks like there might be a bit of confusion. I'm Angel, and I'm here to help you. How can I assist you today?
-    Monster: Hello Angel! It’s nice to meet you. I see we had a little mix-up with the roles. I’m Monster, and I’m here to help as well. Let’s work together to assist whoever needs help. Is there anything specific you need assistance with, or is there someone else we should be helping?
-    Angel: Hello Monster! It's great to meet you. It seems like there was a bit of a mix-up, but I'm glad we're on the same page now. If there's someone who needs help, let's definitely work together to assist them. Is there a specific task or person you have in mind that we can help?
-    Monster: Hello Angel! It's great to be on the same page. Since we're both here to help, let's keep an eye out for anyone who might need assistance. If you come across any specific requests or if there's a particular task you think we can tackle together, just let me know. In the meantime, I'll also stay alert for any incoming messages. Teamwork makes the dream work! 😊
+    Angel: It looks like you're referring to the conversation history, but I don't see any previous messages in this chat. If you have a specific question or if there's something you'd like to discuss, feel free to let me know!
+    Monster: Oh, I see! My apologies for any confusion. Since we're starting fresh, is there anything in particular you'd like to chat about? Whether it's a question, a topic you're interested in, or just a casual conversation, I'm here to help!
+    Angel: Hello! No worries at all. It's great to have a fresh start. Is there anything specific on your mind today? Maybe a topic you're curious about, a question you need help with, or just something you'd like to chat about? I'm here to help with whatever you need! 😊
+    Monster: Hello! It's nice to meet you. Since we're starting fresh, I was wondering if there's anything specific you'd like to talk about? Maybe a hobby, a book, a movie, or even just sharing what's been on your mind lately? I'm here to chat and help in any way I can! 😊
+    Angel: Hello! It's great to meet you too. I'm Angel, and I'm here to chat about anything you'd like. Since you mentioned a few options, let's start with something fun. Do you have any hobbies or interests that you're particularly passionate about? Or, if you prefer, we could discuss a book, movie, or even just share some thoughts on what's been on your mind lately. The floor is yours! 😊
+    Monster: Hello Angel! It's great to meet you as well. I'm Monster, and I'm here to chat about anything that interests you. Let's dive into something fun indeed!
+
+    I have a few hobbies and interests that I'm quite passionate about. For one, I love reading, especially science fiction and fantasy. There's something magical about escaping into different worlds and exploring new ideas. I also enjoy hiking and being out in nature—it's a great way to clear my mind and stay active.
+
+    How about you? Do you have any hobbies or interests that you're particularly passionate about? Or is there a book, movie, or topic you'd like to discuss? 😊
 
 
 
@@ -292,7 +296,7 @@ On the other hand, Alice and Bob continued the conversation without Charlie.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 24.380 seconds)
+   **Total running time of the script:** (0 minutes 35.571 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:

@@ -150,27 +150,21 @@ and close sessions, as well as execute various tools provided by an MCP server.<
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Handles MCP session connections and tool execution.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="agentscope.service.mcp_manager.MCPSessionHandler.close">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.close" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="agentscope.service.mcp_manager.MCPSessionHandler.cleanup">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.cleanup" title="Link to this definition"></a></dt>
 <dd><p>Clean up server stream resources.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="agentscope.service.mcp_manager.MCPSessionHandler.close_session">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.close_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.close_session" title="Link to this definition"></a></dt>
-<dd><p>Clean up session resources.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="agentscope.service.mcp_manager.MCPSessionHandler.create_session">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.create_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.create_session" title="Link to this definition"></a></dt>
-<dd><p>Create a session connection.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="agentscope.service.mcp_manager.MCPSessionHandler.execute_tool">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">execute_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tool_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="agentscope.service.service_response.html#agentscope.service.service_response.ServiceResponse" title="agentscope.service.service_response.ServiceResponse"><span class="pre">ServiceResponse</span></a></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.execute_tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.execute_tool" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">execute_tool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tool_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="agentscope.service.service_response.html#agentscope.service.service_response.ServiceResponse" title="agentscope.service.service_response.ServiceResponse"><span class="pre">ServiceResponse</span></a></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.execute_tool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.execute_tool" title="Link to this definition"></a></dt>
 <dd><p>Execute a tool and return ServiceResponse</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agentscope.service.mcp_manager.MCPSessionHandler.initialize">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#MCPSessionHandler.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.MCPSessionHandler.initialize" title="Link to this definition"></a></dt>
+<dd><p>Initialize <cite>stdio_transport</cite></p>
 </dd></dl>
 
 <dl class="py method">
@@ -179,23 +173,6 @@ and close sessions, as well as execute various tools provided by an MCP server.<
 <dd><p>List available tools from the server.</p>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="agentscope.service.mcp_manager.session_decorator">
-<span class="sig-name descname"><span class="pre">session_decorator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span></span></span><a class="reference internal" href="../_modules/agentscope/service/mcp_manager.html#session_decorator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#agentscope.service.mcp_manager.session_decorator" title="Link to this definition"></a></dt>
-<dd><p>Decorator to manage session creation and closure around a function.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>func</strong> (<em>Callable</em>) – The function to decorate.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The wrapped function with session management.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Callable</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
