@@ -109,16 +109,12 @@ Now, we can start the conversation by exchanging messages between these two agen
 
  .. code-block:: none
 
-    Angel: It looks like you're referring to the conversation history, but I don't see any previous messages in this chat. If you have a specific question or if there's something you'd like to discuss, feel free to let me know!
-    Monster: Oh, I see! My apologies for any confusion. Since we're starting fresh, is there anything in particular you'd like to chat about? Whether it's a question, a topic you're interested in, or just a casual conversation, I'm here to help!
-    Angel: Hello! No worries at all. It's great to have a fresh start. Is there anything specific on your mind today? Maybe a topic you're curious about, a question you need help with, or just something you'd like to chat about? I'm here to help with whatever you need! 😊
-    Monster: Hello! It's nice to meet you. Since we're starting fresh, I was wondering if there's anything specific you'd like to talk about? Maybe a hobby, a book, a movie, or even just sharing what's been on your mind lately? I'm here to chat and help in any way I can! 😊
-    Angel: Hello! It's great to meet you too. I'm Angel, and I'm here to chat about anything you'd like. Since you mentioned a few options, let's start with something fun. Do you have any hobbies or interests that you're particularly passionate about? Or, if you prefer, we could discuss a book, movie, or even just share some thoughts on what's been on your mind lately. The floor is yours! 😊
-    Monster: Hello Angel! It's great to meet you as well. I'm Monster, and I'm here to chat about anything that interests you. Let's dive into something fun indeed!
-
-    I have a few hobbies and interests that I'm quite passionate about. For one, I love reading, especially science fiction and fantasy. There's something magical about escaping into different worlds and exploring new ideas. I also enjoy hiking and being out in nature—it's a great way to clear my mind and stay active.
-
-    How about you? Do you have any hobbies or interests that you're particularly passionate about? Or is there a book, movie, or topic you'd like to discuss? 😊
+    Angel: It looks like you're referring to the conversation history, but I don't see any previous messages in this chat. If you'd like to start a new conversation or if there's something specific you want to discuss, feel free to let me know!
+    Monster: Oh, hello! I must have gotten a bit mixed up. Let's start fresh then! What would you like to chat about today? Whether it's a question, a topic you're curious about, or just a casual conversation, I'm here to help! 😊
+    Angel: Hello! It's great to meet you. I'm Angel, and I'm here to help with anything you'd like to discuss. Whether you have a question, a topic you're curious about, or just want to chat, feel free to let me know! 😊
+    Monster: Hello Angel! It's nice to meet you. I'm Monster, and I'm here to chat about anything you'd like. Whether it's a specific topic, a question, or just a casual conversation, I'm all ears! What would you like to talk about today? 😊
+    Angel: Hello Monster! It's lovely to meet you. I'm Angel, and I'm here to chat about anything that interests you. Whether it's a specific topic, a question, or just a casual conversation, I'm here to help. What would you like to talk about today? 😊
+    Monster: Hello Angel! It's great to meet you. Since we're both here to chat and help, why don't we start with something fun? How about sharing a favorite hobby or interest? Or, if you have any questions or topics you're curious about, feel free to dive right in! 😊
 
 
 
@@ -296,7 +292,7 @@ On the other hand, Alice and Bob continued the conversation without Charlie.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 35.571 seconds)
+   **Total running time of the script:** (0 minutes 24.336 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:
