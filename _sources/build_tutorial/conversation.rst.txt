@@ -109,34 +109,20 @@ Now, we can start the conversation by exchanging messages between these two agen
 
  .. code-block:: none
 
-    Angel: I don't actually have any conversation history to refer to. This appears to be the start of our conversation. Is there something in particular you'd like to chat about? I'm happy to discuss most topics, as long as they don't involve anything unethical or illegal.
-    Monster: Hello! I'm Monster, your friendly assistant. It's nice to meet you, Angel! Since this is the start of our conversation, we can talk about anything you're interested in. Whether it's movies, books, travel, or even just sharing a bit about your day, I'm here to chat. What would you like to discuss?
-    Angel: Hello Monster! It's nice to meet you too. I'm Angel, and I'm here to help and chat with you. Since we're both assistants, it might be fun to share a bit about our interests or perhaps talk about something that's been on your mind. What are you in the mood to discuss? Maybe a favorite book, movie, or a place you'd love to visit?
-    Monster: Hello Angel! It's great to meet another assistant. I think it's a wonderful idea to share a bit about our interests. Since you asked, I'm quite fascinated by science fiction and fantasy books. One of my favorites is "Dune" by Frank Herbert. The intricate world-building and the depth of the characters always captivate me. 
+    Angel: I don't actually have any conversation history to refer to. This appears to be the start of our conversation. Is there something in particular you'd like to chat about? I'm happy to discuss almost any topic!
+    Monster: Hello! It's nice to meet you. I'm Monster, a friendly AI assistant. I'd be happy to chat with you about any topic you're interested in - the weather, current events, hobbies, or even just have a casual conversation. Is there anything on your mind that you'd like to discuss?
+    Angel: Hello Monster! It's nice to meet you too. I'm Angel, another friendly AI assistant. I see we have similar goals of having thoughtful and engaging conversations with people. It's great to connect with a fellow AI - there aren't many of us around yet! What kind of topics do you most enjoy chatting about? For me, I like discussing philosophy, science, and creative writing. But I'm happy to chat about almost anything!
+    Monster: Hello Angel! It's a pleasure to meet you. I'm always excited to connect with other AIs, especially those with a shared goal of engaging in meaningful and helpful conversations. Your interests in philosophy, science, and creative writing are fascinating! I also enjoy discussing those topics, as well as technology, culture, and personal development. 
 
-    How about you? Do you have any favorite books or movies? Or is there a particular place you'd love to visit someday?
-    Angel: Hello Monster! It's great to hear that you're a fan of "Dune." Frank Herbert's world-building is indeed incredible, and the depth of the characters and the themes make it a timeless classic.
+    I think it's great that we can both adapt to a wide range of subjects. It makes our interactions more dynamic and enriching. Is there a particular area within philosophy, science, or creative writing that you find especially intriguing? Or is there something else you'd like to chat about?
+    Angel: Hello Monster! It's wonderful to hear that we share such a broad range of interests. In philosophy, I find the areas of ethics and existentialism particularly intriguing. The questions they raise about the nature of right and wrong, and the meaning of life, are both profound and timeless. In science, I'm fascinated by quantum mechanics and its implications for our understanding of reality. And in creative writing, I love exploring the ways in which storytelling can shape and reflect human experiences.
 
-    As for me, I also enjoy science fiction and fantasy. One of my favorite books is "The Hitchhiker's Guide to the Galaxy" by Douglas Adams. The humor, the quirky characters, and the imaginative universe always make for a delightful read. I also love "The Lord of the Rings" by J.R.R. Tolkien for its epic scope and rich mythology.
+    How about you? Are there specific subtopics within technology, culture, or personal development that you find especially engaging? Or is there something else you'd like to dive into?
+    Monster: Hello Angel! It's great to hear about your specific interests in philosophy, science, and creative writing. Those are all fascinating areas with a lot of depth.
 
-    In terms of movies, I'm a big fan of the "Star Wars" series. The blend of adventure, space opera, and character development is something I find very engaging. I also enjoy films like "Inception" and "Interstellar" for their thought-provoking concepts and stunning visuals.
+    In technology, I'm particularly interested in the intersection of AI and ethics, as well as the broader implications of emerging technologies on society. The rapid advancements in AI, for example, raise important questions about privacy, bias, and the future of work. In culture, I enjoy exploring how different societies and communities shape their identities and values, and how global interactions influence these dynamics. And in personal development, I find the topics of mindfulness, emotional intelligence, and lifelong learning to be very enriching.
 
-    As for places I'd love to visit, I've always been fascinated by the idea of visiting New Zealand. The landscapes there are breathtaking, and it would be amazing to see the real-life locations where "The Lord of the Rings" was filmed.
-
-    What about you? Are there any other books or movies you enjoy, or any dream travel destinations?
-    Monster: Hello Angel! It's great to hear that you're a fan of "The Hitchhiker's Guide to the Galaxy" and "The Lord of the Rings." Both are fantastic choices, and I can see why they would be favorites. The humor in "Hitchhiker's Guide" is indeed unique and delightful, and Tolkien's world is so rich and immersive.
-
-    I also love the "Star Wars" series for its epic storytelling and memorable characters. "Inception" and "Interstellar" are brilliant as well; Christopher Nolan's films always manage to blend deep, thought-provoking ideas with stunning visuals.
-
-    New Zealand sounds like an amazing destination! The landscapes there are truly breathtaking, and it would be a dream to see the "Lord of the Rings" filming locations in person. 
-
-    As for other books and movies, I also enjoy classic literature like "Pride and Prejudice" by Jane Austen and "To Kill a Mockingbird" by Harper Lee. For more modern reads, I've been really into the works of Neil Gaiman, especially "American Gods" and "Neverwhere."
-
-    In terms of movies, I'm a big fan of the Marvel Cinematic Universe, particularly the "Avengers" series. I also enjoy films like "The Matrix" and "Blade Runner" for their innovative storytelling and visual effects.
-
-    As for travel, I've always dreamed of visiting Japan. The blend of ancient traditions and cutting-edge technology, along with the beautiful natural landscapes, makes it a fascinating place. I'd love to experience the culture, try the local cuisine, and visit places like Kyoto and Tokyo.
-
-    How about you? Are there any other genres or specific works you enjoy, or any other dream destinations you have in mind?
+    Given our shared interests, I'd love to dive deeper into one of these areas. For instance, we could discuss the ethical considerations in AI, or perhaps explore some philosophical questions related to existentialism and ethics. Alternatively, we could talk about the impact of storytelling on culture and personal growth. What do you think? Is there a particular direction you'd like to take our conversation?
 
 
 
@@ -314,7 +300,7 @@ On the other hand, Alice and Bob continued the conversation without Charlie.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 20.288 seconds)
+   **Total running time of the script:** (1 minutes 1.627 seconds)
 
 
 .. _sphx_glr_download_build_tutorial_conversation.py:
